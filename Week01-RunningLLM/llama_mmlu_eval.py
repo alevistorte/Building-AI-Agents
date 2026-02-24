@@ -36,7 +36,7 @@ MODEL_NAME = "meta-llama/Llama-3.2-1B-Instruct"
 # GPU settings
 # If True, will attempt to use the best available GPU (CUDA for NVIDIA, MPS for Apple Silicon)
 # If False, will always use CPU regardless of available hardware
-USE_GPU = True  # Set to False to force CPU-only execution
+USE_GPU = False  # Set to False to force CPU-only execution
 
 MAX_NEW_TOKENS = 1
 
@@ -457,9 +457,11 @@ def main():
     # Save results
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     quant_suffix = f"_{QUANTIZATION_BITS}bit" if QUANTIZATION_BITS else "_full"
-    results_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
+    results_dir = os.path.join(os.path.dirname(
+        os.path.abspath(__file__)), "results")
     os.makedirs(results_dir, exist_ok=True)
-    output_file = os.path.join(results_dir, f"llama_3.2_1b_mmlu_results{quant_suffix}_{timestamp}.json")
+    output_file = os.path.join(
+        results_dir, f"llama_3.2_1b_mmlu_results{quant_suffix}_{timestamp}.json")
 
     output_data = {
         "model": MODEL_NAME,
