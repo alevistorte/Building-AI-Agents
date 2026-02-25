@@ -1,0 +1,156 @@
+==================================================
+LangGraph Multi-Party Chat: Human + Llama + Qwen
+  Start with 'Hey Qwen' to address Qwen.
+  All other input goes to Llama.
+==================================================
+
+Using MPS (Apple Silicon) for inference
+
+Loading Llama-3.2-1B-Instruct...
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+  meta-llama/Llama-3.2-1B-Instruct loaded successfully!
+
+Loading Qwen2.5-1.5B-Instruct...
+Loading model: Qwen/Qwen2.5-1.5B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+  Qwen/Qwen2.5-1.5B-Instruct loaded successfully!
+
+Chat log: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/chat_log_20260225_145007.txt
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+Hi my name is Leo
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+Hello Leo! How's it going?
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+So far so good. I am interested in learning about AI agents
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+That's great to hear! Learning about AI agents is a fascinating topic. I'd be happy to help you understand more about the different types of AI agents and their roles in various applications. Which area of AI interests you the most?
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> what is the regular pipeline for building an agent?
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+The regular pipeline for building an AI agent typically involves several steps:
+
+1. **Problem Definition**: Identify a specific problem or task that needs to be solved, such as playing a game or completing a task.
+2. **Agent Architecture**: Design the agent's architecture, including its goals, constraints, and data requirements.
+3. **Data Collection**: Gather data relevant to the problem, such as training data, examples, or feedback.
+4. **Model Selection**: Choose an AI model or algorithm to solve the problem, such as a machine learning model or a rule-based system.
+5. **Training**: Train the model on the collected data, using techniques such as supervised learning, reinforcement learning, or self-supervised learning.
+6. **Model Evaluation**: Evaluate the trained model's performance, using metrics such as accuracy, loss, or other relevant measures.
+7. **Deployment**: Deploy the trained model in a production-ready environment, such as a server or a specific application.
+
+Llama: This pipeline can be repeated for different tasks and applications, and each agent may require modifications to the pipeline as needed.
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> hey qwen, can you give me more details?
+
+[Qwen] Processing...
+
+==================================================
+Qwen response:
+--------------------------------------------------
+I'm sorry, but there seems to have been some confusion. You asked "can you give me more details?" which implies you're asking another question, not seeking information about the AI agent pipeline. If you could rephrase your query or provide more context, I would be glad to assist you further.
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> hey qwen could you sumarize the pipeline for me. I need it for a slides
+
+[Qwen] Processing...
+
+==================================================
+Qwen response:
+--------------------------------------------------
+Sure! Here’s a summary of the typical AI agent building pipeline:
+
+**Step 1: Problem Definition**
+- Clearly define what problem needs solving.
+- Specify the goal, constraints, and desired outcomes.
+
+**Step 2: Agent Architecture**
+- Decide on the structure and functions of the agent.
+- Define its objectives, limitations, and how it interacts with the environment.
+
+**Step 3: Data Collection**
+- Gather input data related to the problem.
+- Collect labeled data if necessary; this can include images, text, audio, etc.
+
+**Step 4: Model Selection**
+- Select an appropriate AI model or method based on the nature of the problem.
+- Common choices include deep learning models like neural networks, rule-based systems, or hybrid methods.
+
+**Step 5: Training**
+- Feed the selected model(s) with the collected data.
+- Use algorithms like supervised learning, reinforcement learning, or semi-supervised learning for training.
+
+**Step 6: Model Evaluation**
+- Test the trained model against unseen data.
+- Measure performance using metrics like accuracy, precision, recall, F1 score, and others.
+
+**Step 7: Deployment**
+- Implement the trained model into a live system or service.
+- Ensure the agent performs reliably under real-world conditions.
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> great
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+Glad you found the summary helpful! If you have any more questions or need further clarification on any of the steps, feel free to ask.
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> exit
+Goodbye!
