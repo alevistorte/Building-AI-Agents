@@ -24,6 +24,8 @@ SCRIPT_DIR = Path(__file__).parent
 
 # Determine the best available device for inference
 # Priority: CUDA (NVIDIA GPU) > MPS (Apple Silicon) > CPU
+
+
 def get_device():
     """
     Detect and return the best available compute device.
@@ -46,6 +48,7 @@ def get_device():
 # Each node can read from and write to specific fields in the state.
 # LangGraph automatically merges the returned dict from each node into the state.
 
+
 class AgentState(TypedDict):
     """
     State object that flows through the LangGraph nodes.
@@ -63,20 +66,21 @@ class AgentState(TypedDict):
     3. After call_llm: llm_response is populated
     4. After print_response: state unchanged (node only reads, doesn't write)
 
-    The graph loops continuously:
+    The graph loops continuously (3-way conditional branch from get_user_input):
         get_user_input -> [conditional] -> call_llm -> print_response -> get_user_input
                               |                                               ^
-                              +-> get_user_input (verbose/quiet toggle)-------+
+                              +-> get_user_input (empty / verbose / quiet)---+
                               |
                               +-> END (if user wants to quit)
 
     Typing 'verbose' enables per-node tracing; typing 'quiet' disables it.
-    Both commands re-prompt immediately without calling the LLM.
+    Both commands, as well as empty input, re-prompt immediately without calling the LLM.
     """
     user_input: str
     should_exit: bool
     verbose: bool
     llm_response: str
+
 
 def create_llm():
     """
@@ -124,6 +128,7 @@ def create_llm():
 
     print("Model loaded successfully!")
     return llm
+
 
 def create_graph(llm):
     """
@@ -203,6 +208,15 @@ def create_graph(llm):
                 "verbose": False,
             }
 
+        # Empty input - loop back without calling the LLM
+        if not user_input.strip():
+            print("Please enter some text.")
+            return {
+                "user_input": "",
+                "should_exit": False,
+                "verbose": verbose,
+            }
+
         # Any other input - continue to LLM
         if verbose:
             print(f"[TRACE] get_user_input routing to call_llm")
@@ -250,7 +264,8 @@ def create_graph(llm):
         response = llm.invoke(prompt)
 
         if verbose:
-            print(f"[TRACE] call_llm received response ({len(response)} chars)")
+            print(
+                f"[TRACE] call_llm received response ({len(response)} chars)")
 
         # Return only the field we're updating
         return {"llm_response": response}
@@ -301,20 +316,21 @@ def create_graph(llm):
 
         Examines state:
             - should_exit: If True, terminate the graph
-            - user_input: If 'verbose' or 'quiet', loop back to get_user_input
-                          without calling the LLM
+            - user_input: If empty, 'verbose', or 'quiet', loop back to
+                          get_user_input without calling the LLM
 
         Returns:
             - END: If user wants to quit
-            - "get_user_input": If user typed a control command (verbose/quiet)
-            - "call_llm": For any other input
+            - "get_user_input": If input is empty or a control command (verbose/quiet)
+            - "call_llm": For any other non-empty input
         """
         # Check if user wants to exit
         if state.get("should_exit", False):
             return END
 
-        # Control commands are handled in-place; skip the LLM and re-prompt
-        if state.get("user_input", "").lower() in ("verbose", "quiet"):
+        # Empty input or control commands: skip the LLM and re-prompt
+        user_input = state.get("user_input", "")
+        if not user_input.strip() or user_input.lower() in ("verbose", "quiet"):
             return "get_user_input"
 
         # Default: Proceed to LLM
@@ -359,6 +375,7 @@ def create_graph(llm):
 
     return graph
 
+
 def save_graph_image(graph, filename="lg_graph.png"):
     """
     Generate a Mermaid diagram of the graph and save it as a PNG image.
@@ -378,6 +395,7 @@ def save_graph_image(graph, filename="lg_graph.png"):
     except Exception as e:
         print(f"Could not save graph image: {e}")
         print("You may need to install additional dependencies: pip install grandalf")
+
 
 def main():
     """
@@ -428,6 +446,7 @@ def main():
     # Single invocation - the graph loops internally via print_response -> get_user_input
     # The graph only exits when route_after_input returns END (user typed quit/exit/q)
     graph.invoke(initial_state)
+
 
 # Entry point - only run main() if this script is executed directly
 if __name__ == "__main__":

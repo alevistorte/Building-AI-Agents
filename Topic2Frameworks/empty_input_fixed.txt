@@ -1,0 +1,42 @@
+==================================================
+LangGraph Simple Agent with Llama-3.2-1B-Instruct
+==================================================
+
+Using MPS (Apple Silicon) for inference
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+Model loaded successfully!
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> 
+Please enter some text.
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> 
+Please enter some text.
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> 
+Please enter some text.
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> 

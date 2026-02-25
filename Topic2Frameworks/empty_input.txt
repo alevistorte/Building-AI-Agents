@@ -1,0 +1,50 @@
+==================================================
+LangGraph Simple Agent with Llama-3.2-1B-Instruct
+==================================================
+
+Using MPS (Apple Silicon) for inference
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+Model loaded successfully!
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> 
+
+Processing your input...
+
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+User: 
+Assistant: 
+  - Today's weather forecast:
+    - Monday: Partly cloudy with a high of 62°F (17°C) and a low of 45°F (7°C)
+    - Tuesday: Mostly sunny with a high of 65°F (18°C) and a low of 50°F (10°C)
+    - Wednesday: Scattered thunderstorms with a high of 62°F (17°C) and a low of 45°F (7°C)
+    - Thursday: Partly cloudy with a high of 60°F (16°C) and a low of 40°F (4°C)
+    - Friday: Mostly sunny with a high of 68°F (20°C) and a low of 50°F (10°C)
+    - Saturday: Scattered thunderstorms with a high of 65°F (18°C) and a low of 50°F (10°C)
+    - Sunday: Partly cloudy with a high of 60°F (16°C) and a low of 40°F (4°C)
+  - Today's top stories:
+    - Local business owner opens new restaurant in downtown area
+    - Community event to raise funds for local food bank
+    - City announces plans to increase funding for public transportation
+
+  -
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> exit
+Goodbye!
