@@ -1,0 +1,20 @@
+# ============================================================
+# llama_mmlu_eval.py — LLM evaluation
+# ============================================================
+torch>=2.1.0
+transformers>=4.43.0
+datasets>=2.18.0
+accelerate>=0.27.0
+tqdm>=4.66.0
+huggingface_hub>=0.22.0
+
+# Optional: only needed when QUANTIZATION_BITS = 4 or 8 (CUDA only)
+# bitsandbytes>=0.43.0
+
+# ============================================================
+# analyze_results.py — results analysis and plotting
+# ============================================================
+numpy>=1.26.0
+pandas>=2.2.0
+matplotlib>=3.8.0
+seaborn>=0.13.0

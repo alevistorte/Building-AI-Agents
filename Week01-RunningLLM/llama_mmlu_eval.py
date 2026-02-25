@@ -61,6 +61,10 @@ MAX_NEW_TOKENS = 1
 
 QUANTIZATION_BITS = None  # Change to 4 or 8 to enable quantization
 
+# Verbose output: print each question, model answer, and correctness during evaluation
+# Only used by main() (single-model run), not evaluate_all_models()
+VERBOSE = False  # Set to True to enable per-question output
+
 # For quick testing, you can reduce this list
 MMLU_SUBJECTS = [
     # "abstract_algebra", "anatomy",
@@ -369,7 +373,7 @@ def get_model_prediction(model, tokenizer, prompt):
     return answer
 
 
-def evaluate_subject(model, tokenizer, subject):
+def evaluate_subject(model, tokenizer, subject, verbose=False):
     """Evaluate model on a specific MMLU subject"""
     print(f"\n{'='*70}")
     print(f"Evaluating subject: {subject}")
@@ -383,19 +387,31 @@ def evaluate_subject(model, tokenizer, subject):
 
     correct = 0
     total = 0
+    answers = []
+    choice_labels = ["A", "B", "C", "D"]
 
-    for example in tqdm(dataset, desc=f"Testing {subject}", leave=True):
+    for example in tqdm(dataset, desc=f"Testing {subject}", leave=True, disable=verbose):
         question = example["question"]
         choices = example["choices"]
         correct_answer_idx = example["answer"]
-        correct_answer = ["A", "B", "C", "D"][correct_answer_idx]
+        correct_answer = choice_labels[correct_answer_idx]
 
         prompt = format_mmlu_prompt(question, choices)
         predicted_answer = get_model_prediction(model, tokenizer, prompt)
 
-        if predicted_answer == correct_answer:
+        is_correct = predicted_answer == correct_answer
+        answers.append(1 if is_correct else 0)
+        if is_correct:
             correct += 1
         total += 1
+
+        if verbose:
+            print(f"\n--- Q{total} ---")
+            print(f"Question: {question}")
+            for label, choice in zip(choice_labels, choices):
+                print(f"  {label}. {choice}")
+            verdict = "✓ CORRECT" if is_correct else f"✗ WRONG (correct: {correct_answer})"
+            print(f"Model answer: {predicted_answer}  {verdict}")
 
     accuracy = (correct / total * 100) if total > 0 else 0
     print(f"✓ Result: {correct}/{total} correct = {accuracy:.2f}%")
@@ -404,7 +420,8 @@ def evaluate_subject(model, tokenizer, subject):
         "subject": subject,
         "correct": correct,
         "total": total,
-        "accuracy": accuracy
+        "accuracy": accuracy,
+        "answers": answers
     }
 
 
@@ -433,7 +450,7 @@ def main():
 
     for i, subject in enumerate(MMLU_SUBJECTS, 1):
         print(f"\nProgress: {i}/{len(MMLU_SUBJECTS)} subjects")
-        result = evaluate_subject(model, tokenizer, subject)
+        result = evaluate_subject(model, tokenizer, subject, verbose=VERBOSE)
         if result:
             results.append(result)
             total_correct += result["correct"]
@@ -545,7 +562,8 @@ def evaluate_all_models():
 
             for i, subject in enumerate(MMLU_SUBJECTS, 1):
                 print(f"\nProgress: {i}/{len(MMLU_SUBJECTS)} subjects")
-                result = evaluate_subject(model, tokenizer, subject)
+                result = evaluate_subject(
+                    model, tokenizer, subject, verbose=VERBOSE)
                 if result:
                     results.append(result)
                     total_correct += result["correct"]
