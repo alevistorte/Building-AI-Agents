@@ -1,10 +1,10 @@
 # langgraph_simple_agent.py
-# Program demonstrates use of LangGraph for a simple agent with parallel LLM inference.
+# Program demonstrates use of LangGraph for a simple agent with conditional LLM routing.
 # It writes to stdout and asks the user to enter a line of text through stdin.
-# It fans the input out to TWO LLMs running in parallel:
-#   - meta-llama/Llama-3.2-1B-Instruct
-#   - Qwen/Qwen2.5-1.5B-Instruct
-# After both models respond, their outputs are collected and printed side-by-side.
+# It routes the input to ONE of two LLMs based on the user's phrasing:
+#   - Input starting with "Hey Qwen" -> Qwen/Qwen2.5-1.5B-Instruct
+#   - All other input              -> meta-llama/Llama-3.2-1B-Instruct
+# The chosen model's response is printed to stdout.
 # The LLMs use Cuda if available, MPS (Apple Silicon) if available, otherwise CPU.
 # After the LangGraph graph is created but before it executes, the program
 # uses the Mermaid library to write an image of the graph to the file lg_graph.png.
@@ -65,18 +65,19 @@ class AgentState(TypedDict):
     State Flow:
     1. Initial state: all fields empty/default
     2. After get_user_input: user_input, should_exit, and verbose are populated
-    3. After dispatch_to_models: no state change (passthrough fan-out node)
-    4. After call_llama and call_qwen (run in parallel): llama_response and qwen_response populated
-    5. After print_responses: state unchanged (node only reads, doesn't write)
+    3. After call_llama OR call_qwen (only one runs): the matching response field is
+       populated and the other is cleared to ""
+    4. After print_responses: state unchanged (node only reads, doesn't write)
 
-    The graph loops continuously (3-way conditional branch from get_user_input):
-        get_user_input -> [conditional] -> dispatch_to_models -> call_llama  -+
-                              |                                 -> call_qwen  -+-> print_responses -> get_user_input
-                              |                                                                             ^
-                              +-> get_user_input (empty / verbose / quiet) --------------------------+
+    The graph loops continuously (4-way conditional branch from get_user_input):
+        get_user_input -> [conditional] -> call_llama -> print_responses -> get_user_input
+                              |         -> call_qwen  ->        ^                ^
+                              |                                 |                |
+                              +-> get_user_input (empty / verbose / quiet) ------+
                               |
                               +-> END (if user wants to quit)
 
+    Input starting with "Hey Qwen" routes to call_qwen; all other input routes to call_llama.
     Typing 'verbose' enables per-node tracing; typing 'quiet' disables it.
     Both commands, as well as empty input, re-prompt immediately without calling the LLMs.
     """
@@ -145,20 +146,22 @@ def create_qwen_llm(device: str) -> HuggingFacePipeline:
 
 def create_graph(llama_llm, qwen_llm):
     """
-    Create the LangGraph state graph with five nodes:
-    1. get_user_input:    Reads input from stdin
-    2. dispatch_to_models: Passthrough fan-out node; LangGraph sends it to both
-                           call_llama and call_qwen in parallel via two outgoing edges
-    3. call_llama:        Sends input to Llama-3.2-1B-Instruct
-    4. call_qwen:         Sends input to Qwen2.5-1.5B-Instruct  (parallel with call_llama)
-    5. print_responses:   Fan-in node; waits for both models then prints both responses
+    Create the LangGraph state graph with four nodes:
+    1. get_user_input:  Reads input from stdin
+    2. call_llama:      Sends input to Llama-3.2-1B-Instruct
+    3. call_qwen:       Sends input to Qwen2.5-1.5B-Instruct
+    4. print_responses: Prints whichever model ran
+
+    Routing rule (conditional edge from get_user_input):
+        Input starting with "Hey Qwen" -> call_qwen
+        All other non-empty input      -> call_llama
 
     Graph structure:
-        START -> get_user_input -> [conditional] -> dispatch_to_models -> call_llama  -+
-                      ^                 |                              -> call_qwen   -+-> print_responses -+
-                      |                 +-> get_user_input (verbose/quiet/empty)                           |
-                      |                 +-> END (quit)                                                     |
-                      +-----------------------------------------------------------------------------------+
+        START -> get_user_input -> [conditional] -> call_llama -+-> print_responses -+
+                      ^                 |         -> call_qwen -+                    |
+                      |                 +-> get_user_input (verbose/quiet/empty)     |
+                      |                 +-> END (quit)                               |
+                      +-------------------------------------------------------------+
 
     The graph runs continuously until the user types 'quit', 'exit', or 'q'.
     """
@@ -228,9 +231,10 @@ def create_graph(llama_llm, qwen_llm):
                 "verbose": verbose,
             }
 
-        # Any other input - continue to dispatch_to_models
+        # Any other input - route to the appropriate model
         if verbose:
-            print(f"[TRACE] get_user_input routing to dispatch_to_models")
+            target = "call_qwen" if user_input.lower().startswith("hey qwen") else "call_llama"
+            print(f"[TRACE] get_user_input routing to {target}")
         return {
             "user_input": user_input,
             "should_exit": False,
@@ -238,32 +242,10 @@ def create_graph(llama_llm, qwen_llm):
         }
 
     # =========================================================================
-    # NODE 2: dispatch_to_models
+    # NODE 2: call_llama
     # =========================================================================
-    # Passthrough fan-out node.  It does not modify state; its only purpose
-    # is to be the single target of the conditional edge from get_user_input so
-    # that LangGraph can then fan out along its two outgoing edges (to call_llama
-    # and call_qwen) and execute those branches in parallel.
-    def dispatch_to_models(state: AgentState) -> dict:
-        """
-        Passthrough node that acts as the fan-out point.
-
-        Reads state:
-            - verbose: If True, prints tracing information
-        Updates state:
-            - Nothing (returns empty dict, state unchanged)
-        """
-        verbose = state.get("verbose", False)
-        if verbose:
-            print(f"[TRACE] Entering node: dispatch_to_models — fanning out to Llama and Qwen")
-        # No state change; LangGraph will branch to both call_llama and call_qwen
-        return {}
-
-    # =========================================================================
-    # NODE 3: call_llama
-    # =========================================================================
-    # Runs in parallel with call_qwen.
-    # State changes: writes llama_response
+    # Reached when the user's input does NOT start with "Hey Qwen".
+    # State changes: writes llama_response, clears qwen_response.
     def call_llama(state: AgentState) -> dict:
         """
         Node that invokes Llama-3.2-1B-Instruct with the user's input.
@@ -273,6 +255,7 @@ def create_graph(llama_llm, qwen_llm):
             - verbose: If True, prints tracing information
         Updates state:
             - llama_response: The text generated by Llama
+            - qwen_response:  Cleared to "" (this model did not run this turn)
         """
         verbose = state.get("verbose", False)
         if verbose:
@@ -290,13 +273,13 @@ def create_graph(llama_llm, qwen_llm):
         if verbose:
             print(f"[TRACE] call_llama received response ({len(response)} chars)")
 
-        return {"llama_response": response}
+        return {"llama_response": response, "qwen_response": ""}
 
     # =========================================================================
-    # NODE 4: call_qwen
+    # NODE 3: call_qwen
     # =========================================================================
-    # Runs in parallel with call_llama.
-    # State changes: writes qwen_response
+    # Reached when the user's input starts with "Hey Qwen".
+    # State changes: writes qwen_response, clears llama_response.
     def call_qwen(state: AgentState) -> dict:
         """
         Node that invokes Qwen2.5-1.5B-Instruct with the user's input.
@@ -305,7 +288,8 @@ def create_graph(llama_llm, qwen_llm):
             - user_input: The text to send to the model
             - verbose: If True, prints tracing information
         Updates state:
-            - qwen_response: The text generated by Qwen
+            - qwen_response:  The text generated by Qwen
+            - llama_response: Cleared to "" (this model did not run this turn)
         """
         verbose = state.get("verbose", False)
         if verbose:
@@ -323,40 +307,45 @@ def create_graph(llama_llm, qwen_llm):
         if verbose:
             print(f"[TRACE] call_qwen received response ({len(response)} chars)")
 
-        return {"qwen_response": response}
+        return {"qwen_response": response, "llama_response": ""}
 
     # =========================================================================
-    # NODE 5: print_responses
+    # NODE 4: print_responses
     # =========================================================================
-    # Fan-in node.  LangGraph automatically waits for both call_llama and
-    # call_qwen to finish before executing this node, because both have an
-    # outgoing edge into it.
+    # Receives from whichever model node ran (call_llama or call_qwen).
+    # Exactly one of llama_response / qwen_response will be non-empty.
     # State changes: none (read-only)
     def print_responses(state: AgentState) -> dict:
         """
-        Fan-in node that prints both model responses side-by-side.
+        Node that prints the response from whichever model ran this turn.
 
         Reads state:
-            - llama_response: Response from Llama-3.2-1B-Instruct
-            - qwen_response:  Response from Qwen2.5-1.5B-Instruct
+            - llama_response: Non-empty if Llama ran; "" otherwise
+            - qwen_response:  Non-empty if Qwen ran; "" otherwise
             - verbose: If True, prints tracing information
         Updates state:
             - Nothing (returns empty dict, state unchanged)
         """
         verbose = state.get("verbose", False)
         if verbose:
-            print(f"[TRACE] Entering node: print_responses (both models finished)")
+            print(f"[TRACE] Entering node: print_responses")
 
-        print("\n" + "=" * 50)
-        print("Llama-3.2-1B-Instruct response:")
-        print("-" * 50)
-        print(state["llama_response"])
+        llama_response = state.get("llama_response", "")
+        qwen_response  = state.get("qwen_response", "")
 
-        print("\n" + "=" * 50)
-        print("Qwen2.5-1.5B-Instruct response:")
-        print("-" * 50)
-        print(state["qwen_response"])
-        print("=" * 50)
+        if llama_response:
+            print("\n" + "=" * 50)
+            print("Llama-3.2-1B-Instruct response:")
+            print("-" * 50)
+            print(llama_response)
+            print("=" * 50)
+
+        if qwen_response:
+            print("\n" + "=" * 50)
+            print("Qwen2.5-1.5B-Instruct response:")
+            print("-" * 50)
+            print(qwen_response)
+            print("=" * 50)
 
         if verbose:
             print(f"[TRACE] print_responses complete, routing back to get_user_input")
@@ -373,12 +362,15 @@ def create_graph(llama_llm, qwen_llm):
         Examines state:
             - should_exit: If True, terminate the graph
             - user_input: If empty, 'verbose', or 'quiet', loop back to
-                          get_user_input without calling the LLMs
+                          get_user_input without calling the LLMs.
+                          If it starts with "Hey Qwen", route to call_qwen.
+                          Otherwise route to call_llama.
 
         Returns:
-            - END: If user wants to quit
+            - END:              If user wants to quit
             - "get_user_input": If input is empty or a control command (verbose/quiet)
-            - "dispatch_to_models": For any other non-empty input
+            - "call_qwen":      If input starts with "Hey Qwen" (case-insensitive)
+            - "call_llama":     For all other non-empty input
         """
         if state.get("should_exit", False):
             return END
@@ -387,46 +379,43 @@ def create_graph(llama_llm, qwen_llm):
         if not user_input.strip() or user_input.lower() in ("verbose", "quiet"):
             return "get_user_input"
 
-        return "dispatch_to_models"
+        if user_input.lower().startswith("hey qwen"):
+            return "call_qwen"
+
+        return "call_llama"
 
     # =========================================================================
     # GRAPH CONSTRUCTION
     # =========================================================================
     graph_builder = StateGraph(AgentState)
 
-    # Register all five nodes
-    graph_builder.add_node("get_user_input",    get_user_input)
-    graph_builder.add_node("dispatch_to_models", dispatch_to_models)
-    graph_builder.add_node("call_llama",         call_llama)
-    graph_builder.add_node("call_qwen",          call_qwen)
-    graph_builder.add_node("print_responses",    print_responses)
+    # Register all four nodes
+    graph_builder.add_node("get_user_input", get_user_input)
+    graph_builder.add_node("call_llama",     call_llama)
+    graph_builder.add_node("call_qwen",      call_qwen)
+    graph_builder.add_node("print_responses", print_responses)
 
     # 1. START -> get_user_input
     graph_builder.add_edge(START, "get_user_input")
 
-    # 2. get_user_input -> [conditional] -> dispatch_to_models | get_user_input | END
+    # 2. get_user_input -> [conditional] -> call_llama | call_qwen | get_user_input | END
+    #    route_after_input checks for "Hey Qwen" prefix to pick the model.
     graph_builder.add_conditional_edges(
         "get_user_input",
         route_after_input,
         {
-            "dispatch_to_models": "dispatch_to_models",
-            "get_user_input":     "get_user_input",
-            END:                   END,
+            "call_llama":     "call_llama",
+            "call_qwen":      "call_qwen",
+            "get_user_input": "get_user_input",
+            END:               END,
         }
     )
 
-    # 3. Fan-out: dispatch_to_models -> call_llama  (parallel branch 1)
-    #             dispatch_to_models -> call_qwen   (parallel branch 2)
-    #    LangGraph executes both branches concurrently.
-    graph_builder.add_edge("dispatch_to_models", "call_llama")
-    graph_builder.add_edge("dispatch_to_models", "call_qwen")
-
-    # 4. Fan-in: both branches converge on print_responses
-    #    LangGraph waits for both call_llama and call_qwen before continuing.
+    # 3. Both model nodes lead to print_responses
     graph_builder.add_edge("call_llama", "print_responses")
     graph_builder.add_edge("call_qwen",  "print_responses")
 
-    # 5. Loop: print_responses -> get_user_input
+    # 4. Loop: print_responses -> get_user_input
     graph_builder.add_edge("print_responses", "get_user_input")
 
     # Compile the graph into an executable form
