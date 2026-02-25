@@ -1,0 +1,72 @@
+{
+  "model": "allenai/Olmo-3-7B-Instruct",
+  "quantization_bits": null,
+  "timestamp": "20260116_162851",
+  "device": "cuda",
+  "duration_seconds": 919.155932,
+  "overall_accuracy": 58.89253871421868,
+  "total_correct": 1255,
+  "total_questions": 2131,
+  "subject_results": [
+    {
+      "subject": "astronomy",
+      "correct": 82,
+      "total": 152,
+      "accuracy": 53.94736842105263
+    },
+    {
+      "subject": "business_ethics",
+      "correct": 52,
+      "total": 100,
+      "accuracy": 52.0
+    },
+    {
+      "subject": "nutrition",
+      "correct": 162,
+      "total": 306,
+      "accuracy": 52.94117647058824
+    },
+    {
+      "subject": "philosophy",
+      "correct": 194,
+      "total": 311,
+      "accuracy": 62.37942122186495
+    },
+    {
+      "subject": "prehistory",
+      "correct": 200,
+      "total": 324,
+      "accuracy": 61.72839506172839
+    },
+    {
+      "subject": "professional_accounting",
+      "correct": 120,
+      "total": 282,
+      "accuracy": 42.5531914893617
+    },
+    {
+      "subject": "public_relations",
+      "correct": 70,
+      "total": 110,
+      "accuracy": 63.63636363636363
+    },
+    {
+      "subject": "security_studies",
+      "correct": 155,
+      "total": 245,
+      "accuracy": 63.26530612244898
+    },
+    {
+      "subject": "sociology",
+      "correct": 146,
+      "total": 201,
+      "accuracy": 72.636815920398
+    },
+    {
+      "subject": "us_foreign_policy",
+      "correct": 74,
+      "total": 100,
+      "accuracy": 74.0
+    }
+  ]
+}
