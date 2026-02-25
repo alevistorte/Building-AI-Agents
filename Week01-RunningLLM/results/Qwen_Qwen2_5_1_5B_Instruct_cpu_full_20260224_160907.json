@@ -1,0 +1,72 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "quantization_bits": null,
+  "timestamp": "20260224_160907",
+  "device": "cpu",
+  "duration_seconds": 817.903382,
+  "overall_accuracy": 67.82154722354058,
+  "total_correct": 1429,
+  "total_questions": 2107,
+  "subject_results": [
+    {
+      "subject": "astronomy",
+      "correct": 101,
+      "total": 152,
+      "accuracy": 66.44736842105263
+    },
+    {
+      "subject": "business_ethics",
+      "correct": 65,
+      "total": 100,
+      "accuracy": 65.0
+    },
+    {
+      "subject": "high_school_government_and_politics",
+      "correct": 149,
+      "total": 193,
+      "accuracy": 77.2020725388601
+    },
+    {
+      "subject": "high_school_macroeconomics",
+      "correct": 245,
+      "total": 390,
+      "accuracy": 62.82051282051282
+    },
+    {
+      "subject": "high_school_physics",
+      "correct": 55,
+      "total": 151,
+      "accuracy": 36.423841059602644
+    },
+    {
+      "subject": "high_school_psychology",
+      "correct": 444,
+      "total": 545,
+      "accuracy": 81.46788990825688
+    },
+    {
+      "subject": "high_school_statistics",
+      "correct": 106,
+      "total": 216,
+      "accuracy": 49.074074074074076
+    },
+    {
+      "subject": "human_sexuality",
+      "correct": 94,
+      "total": 131,
+      "accuracy": 71.7557251908397
+    },
+    {
+      "subject": "international_law",
+      "correct": 89,
+      "total": 121,
+      "accuracy": 73.55371900826447
+    },
+    {
+      "subject": "jurisprudence",
+      "correct": 81,
+      "total": 108,
+      "accuracy": 75.0
+    }
+  ]
+}

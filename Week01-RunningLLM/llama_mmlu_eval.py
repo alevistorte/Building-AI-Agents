@@ -33,10 +33,16 @@ import platform
 
 MODEL_NAME = "meta-llama/Llama-3.2-1B-Instruct"
 
+# Alternative models for testing
+MODEL_NAMES = ["meta-llama/Llama-3.2-1B-Instruct",
+               "allenai/OLMo-2-0425-1B",
+               "Qwen/Qwen2.5-1.5B-Instruct"
+               ]
+
 # GPU settings
 # If True, will attempt to use the best available GPU (CUDA for NVIDIA, MPS for Apple Silicon)
 # If False, will always use CPU regardless of available hardware
-USE_GPU = False  # Set to False to force CPU-only execution
+USE_GPU = True  # Set to False to force CPU-only execution
 
 MAX_NEW_TOKENS = 1
 
@@ -66,11 +72,11 @@ MMLU_SUBJECTS = [
     # "formal_logic", "global_facts", "high_school_biology",
     # "high_school_chemistry", "high_school_computer_science",
     # "high_school_european_history", "high_school_geography",
-    # "high_school_government_and_politics", "high_school_macroeconomics",
+    "high_school_government_and_politics", "high_school_macroeconomics",
     # "high_school_mathematics", "high_school_microeconomics",
-    # "high_school_physics", "high_school_psychology", "high_school_statistics",
+    "high_school_physics", "high_school_psychology", "high_school_statistics",
     # "high_school_us_history", "high_school_world_history", "human_aging",
-    # "human_sexuality", "international_law", "jurisprudence",
+    "human_sexuality", "international_law", "jurisprudence",
     # "logical_fallacies", "machine_learning", "management", "marketing",
     # "medical_genetics", "miscellaneous", "moral_disputes", "moral_scenarios",
     # "nutrition", "philosophy", "prehistory", "professional_accounting",
@@ -505,9 +511,123 @@ def main():
     return output_file
 
 
+def evaluate_all_models():
+    """Run MMLU evaluation for all models defined in MODEL_NAMES"""
+    print("\n" + "="*70)
+    print("Multi-Model MMLU Evaluation")
+    print("="*70 + "\n")
+
+    in_colab, device = check_environment()
+    device_suffix = "gpu" if device in ("cuda", "mps") else "cpu"
+
+    all_model_outputs = []
+
+    for model_idx, model_name in enumerate(MODEL_NAMES, 1):
+        print(f"\n{'='*70}")
+        print(f"Model {model_idx}/{len(MODEL_NAMES)}: {model_name}")
+        print(f"{'='*70}\n")
+
+        try:
+            # Temporarily override MODEL_NAME for load_model_and_tokenizer
+            import importlib
+            global MODEL_NAME
+            MODEL_NAME = model_name
+
+            model, tokenizer = load_model_and_tokenizer(device)
+
+            results = []
+            total_correct = 0
+            total_questions = 0
+
+            print(f"\nStarting evaluation on {len(MMLU_SUBJECTS)} subjects")
+
+            start_time = datetime.now()
+
+            for i, subject in enumerate(MMLU_SUBJECTS, 1):
+                print(f"\nProgress: {i}/{len(MMLU_SUBJECTS)} subjects")
+                result = evaluate_subject(model, tokenizer, subject)
+                if result:
+                    results.append(result)
+                    total_correct += result["correct"]
+                    total_questions += result["total"]
+
+            end_time = datetime.now()
+            duration = (end_time - start_time).total_seconds()
+
+            overall_accuracy = (
+                total_correct / total_questions * 100) if total_questions > 0 else 0
+
+            print("\n" + "="*70)
+            print(f"SUMMARY: {model_name}")
+            print("="*70)
+            print(f"Device: {device}")
+            print(
+                f"Quantization: {QUANTIZATION_BITS}-bit" if QUANTIZATION_BITS else "Quantization: None (full precision)")
+            print(f"Total Subjects: {len(results)}")
+            print(f"Total Questions: {total_questions}")
+            print(f"Total Correct: {total_correct}")
+            print(f"Overall Accuracy: {overall_accuracy:.2f}%")
+            print(f"Duration: {duration/60:.1f} minutes")
+            print("="*70)
+
+            # Build output filename: <model_short_name>_<device>_<quant>_<timestamp>.json
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            model_short = model_name.replace(
+                "/", "_").replace("-", "_").replace(".", "_")
+            quant_suffix = f"_{QUANTIZATION_BITS}bit" if QUANTIZATION_BITS else "_full"
+            results_dir = os.path.join(os.path.dirname(
+                os.path.abspath(__file__)), "results")
+            os.makedirs(results_dir, exist_ok=True)
+            output_file = os.path.join(
+                results_dir,
+                f"{model_short}_{device_suffix}{quant_suffix}_{timestamp}.json"
+            )
+
+            output_data = {
+                "model": model_name,
+                "quantization_bits": QUANTIZATION_BITS,
+                "timestamp": timestamp,
+                "device": str(device),
+                "duration_seconds": duration,
+                "overall_accuracy": overall_accuracy,
+                "total_correct": total_correct,
+                "total_questions": total_questions,
+                "subject_results": results
+            }
+
+            with open(output_file, "w") as f:
+                json.dump(output_data, f, indent=2)
+
+            print(f"\n✓ Results saved to: {output_file}")
+            all_model_outputs.append(output_file)
+
+        except Exception as e:
+            print(f"\n❌ Error evaluating model {model_name}: {e}")
+            import traceback
+            traceback.print_exc()
+
+        finally:
+            # Free memory before loading next model
+            try:
+                del model, tokenizer
+                if torch.cuda.is_available():
+                    torch.cuda.empty_cache()
+            except NameError:
+                pass
+
+    print("\n" + "="*70)
+    print("All models evaluated.")
+    print("="*70)
+    for f in all_model_outputs:
+        print(f"  - {f}")
+
+    return all_model_outputs
+
+
 if __name__ == "__main__":
     try:
-        output_file = main()
+        # output_file = main()
+        all_outputs = evaluate_all_models()
     except KeyboardInterrupt:
         print("\n\n⚠️  Evaluation interrupted by user")
     except Exception as e:
