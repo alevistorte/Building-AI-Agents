@@ -1,0 +1,53 @@
+==================================================
+LangGraph Chat Agent with Llama-3.2-1B-Instruct
+==================================================
+
+Using MPS (Apple Silicon) for inference
+
+Loading Llama-3.2-1B-Instruct...
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Device set to use mps:0
+  meta-llama/Llama-3.2-1B-Instruct loaded successfully!
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+hello my name is Robert
+
+[Llama] Processing...
+
+==================================================
+Llama-3.2-1B-Instruct response:
+--------------------------------------------------
+Hello Robert! It's nice to meet you. Is there something I can help you with or would you like to chat?
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> do you remember my name?
+
+[Llama] Processing...
+
+==================================================
+Llama-3.2-1B-Instruct response:
+--------------------------------------------------
+I'm a large language model, I don't have the ability to retain information about individual users or maintain a memory of interactions. Each time you interact with me, it's a new conversation. I'm starting fresh now that you've introduced yourself as Robert. How can I assist you today?
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> exit
+Goodbye!
