@@ -1,0 +1,21 @@
+Analyzing 16 frames from 'Animated_Empty_Room_Video_Generation'...
+
+Frame 0000 |    0.0s | Person | yes
+Frame 0001 |    0.5s | Person | yes
+Frame 0002 |    1.0s | Person | yes
+Frame 0003 |    1.5s | Person | yes
+Frame 0004 |    2.0s | Empty  | no
+Frame 0005 |    2.5s | Empty  | no
+Frame 0006 |    3.0s | Empty  | no
+Frame 0007 |    3.5s | Empty  | no
+Frame 0008 |    4.0s | Empty  | no
+Frame 0009 |    4.5s | Empty  | no
+Frame 0010 |    5.0s | Empty  | no
+Frame 0011 |    5.5s | Empty  | no
+Frame 0012 |    6.0s | Empty  | no
+Frame 0013 |    6.5s | Empty  | no
+Frame 0014 |    7.0s | Empty  | no
+Frame 0015 |    7.5s | Empty  | no
+--- Person presence timeline ---
+Entered scene at 00:00.0  (0.0s)
+Exited  scene at 00:02.0  (2.0s)

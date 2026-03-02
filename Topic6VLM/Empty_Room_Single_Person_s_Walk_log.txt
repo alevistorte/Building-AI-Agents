@@ -1,0 +1,21 @@
+Analyzing 16 frames from 'Empty_Room_Single_Person_s_Walk'...
+
+Frame 0000 |    0.0s | Empty  | no
+Frame 0001 |    0.5s | Person | yes
+Frame 0002 |    1.0s | Person | yes
+Frame 0003 |    1.5s | Person | yes
+Frame 0004 |    2.0s | Person | yes
+Frame 0005 |    2.5s | Person | yes
+Frame 0006 |    3.0s | Person | yes
+Frame 0007 |    3.5s | Person | yes
+Frame 0008 |    4.0s | Person | yes
+Frame 0009 |    4.5s | Person | yes
+Frame 0010 |    5.0s | Person | yes
+Frame 0011 |    5.5s | Person | yes
+Frame 0012 |    6.0s | Person | yes
+Frame 0013 |    6.5s | Person | yes
+Frame 0014 |    7.0s | Empty  | no
+Frame 0015 |    7.5s | Empty  | no
+--- Person presence timeline ---
+Entered scene at 00:00.5  (0.5s)
+Exited  scene at 00:07.0  (7.0s)
