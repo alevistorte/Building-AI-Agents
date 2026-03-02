@@ -1,0 +1,56 @@
+{
+    "summary": "The video introduces viewers to using Zapier for creating AI agents that automate workflows without requiring technical skills. The host demonstrates how to set up an AI agent to manage follow-ups with brands in a mini CRM spreadsheet. By utilizing Zapier's co-pilot feature, users can describe their desired workflow, which simplifies the setup process. The video highlights the integration capabilities of Zapier and showcases its templates for various tasks. Additionally, it explains the difference between traditional workflows and AI agents, emphasizing how agents can handle tasks that require discretion and decision-making. The overall message encourages viewers to try Zapier to automate their tasks effortlessly.",
+    "quiz": [
+        {
+            "question": "What tool is used to create AI agents in the video?",
+            "options": {
+                "A": "Zapier",
+                "B": "Trello",
+                "C": "Asana",
+                "D": "Google Sheets"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "What is the main benefit of using Zapier's co-pilot feature?",
+            "options": {
+                "A": "It requires coding experience.",
+                "B": "It allows users to describe workflows easily.",
+                "C": "It is only available for paid accounts.",
+                "D": "It is used to create graphics."
+            },
+            "answer": "B"
+        },
+        {
+            "question": "Which of the following is NOT mentioned as a feature of Zapier agents?",
+            "options": {
+                "A": "Running on triggers",
+                "B": "Connecting with over 8,000 apps",
+                "C": "Limited to email automation only",
+                "D": "Ability to run automated workflows"
+            },
+            "answer": "C"
+        },
+        {
+            "question": "What type of tasks do Zapier agents handle effectively?",
+            "options": {
+                "A": "Tasks that require no thinking",
+                "B": "Tasks requiring discretion and context-based decisions",
+                "C": "Only simple data entries",
+                "D": "Any task, regardless of complexity"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "What should you do before deploying an AI agent you've created?",
+            "options": {
+                "A": "Publish it immediately",
+                "B": "Test it to ensure it works correctly",
+                "C": "Delete it",
+                "D": "Share it with others"
+            },
+            "answer": "B"
+        }
+    ],
+    "chapters": []
+}

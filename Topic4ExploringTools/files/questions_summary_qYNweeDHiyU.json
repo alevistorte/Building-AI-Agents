@@ -1,0 +1,87 @@
+{
+    "summary": "The video discusses the differences between artificial intelligence (AI), machine learning (ML), and deep learning (DL). AI aims to replicate human intelligence, while ML involves machines learning from data without specific programming. DL is a subset of ML that uses neural networks to simulate brain functions. The video also touches on generative AI, which includes technologies like large language models and deep fakes, emphasizing the importance of foundation models in modern AI advancements. The speaker mentions the rapid growth and mainstream adoption of AI technologies over recent years, driven by these developments.",
+    "quiz": [
+        {
+            "question": "What is the primary goal of artificial intelligence?",
+            "options": {
+                "A": "To simulate human intelligence",
+                "B": "To replace human jobs",
+                "C": "To automate mundane tasks",
+                "D": "To simplify programming"
+            },
+            "answer": "A"
+        },
+        {
+            "question": "How does machine learning differ from traditional programming?",
+            "options": {
+                "A": "It requires more programming skills",
+                "B": "It learns from data instead of being programmed",
+                "C": "It is slower than traditional programming",
+                "D": "It cannot predict outcomes"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "What is deep learning primarily based on?",
+            "options": {
+                "A": "Rule-based systems",
+                "B": "Neural networks",
+                "C": "Data mining techniques",
+                "D": "Simple algorithms"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "What does generative AI do?",
+            "options": {
+                "A": "It analyzes data",
+                "B": "It creates new content",
+                "C": "It organizes existing information",
+                "D": "It operates without data"
+            },
+            "answer": "B"
+        },
+        {
+            "question": "What recent advancement has significantly increased AI adoption?",
+            "options": {
+                "A": "Supervised learning",
+                "B": "Foundation models",
+                "C": "Expert systems",
+                "D": "Traditional machines"
+            },
+            "answer": "B"
+        }
+    ],
+    "chapters": [
+        {
+            "title": "Intro",
+            "start_time": "0:00",
+            "end_time": "1:11"
+        },
+        {
+            "title": "AI",
+            "start_time": "1:11",
+            "end_time": "2:53"
+        },
+        {
+            "title": "Machine Learning",
+            "start_time": "2:53",
+            "end_time": "4:48"
+        },
+        {
+            "title": "Deep Learning",
+            "start_time": "4:48",
+            "end_time": "5:56"
+        },
+        {
+            "title": "Generative AI",
+            "start_time": "5:56",
+            "end_time": "9:08"
+        },
+        {
+            "title": "Conclusion",
+            "start_time": "9:08",
+            "end_time": "10:00"
+        }
+    ]
+}

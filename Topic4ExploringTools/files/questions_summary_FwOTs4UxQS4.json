@@ -1,0 +1,87 @@
+{
+    "summary": "The video explains the concept of AI agents in a straightforward manner, targeting those with no technical background. It introduces three levels of understanding: 1) Large Language Models (LLMs) - applications like ChatGPT that generate and edit text based on user input. However, LLMs have limitations as they do not access personal data or act unless prompted. 2) AI Workflows - a step further where predefined paths direct the LLMs to fetch information from external sources, but they remain controlled by human decisions. Examples illustrate using a workflow for compiling news articles and creating social media posts. 3) AI Agents - the evolution of workflows where LLMs not only follow paths but also reason, decide, and iterate autonomously. An AI agent can analyze data, make decisions, and refine outputs without human intervention, signifying its role as a decision-maker. The video concludes by emphasizing the shift from human-driven workflows to AI-driven decision-making processes.",
+    "quiz": [
+        {
+            "question": "What is a Large Language Model (LLM)?",
+            "options": {
+                "A": "An application that generates and edits text based on user input.",
+                "B": "A physical robot that performs tasks.",
+                "C": "A database that stores user information.",
+                "D": "A programming language for AI development."
+            },
+            "answer": "A"
+        },
+        {
+            "question": "What does an AI Workflow do?",
+            "options": {
+                "A": "It performs tasks autonomously without human input.",
+                "B": "It follows a predefined path set by humans to achieve a specific goal.",
+                "C": "It generates random outputs based on data.",
+                "D": "It requires continuous human intervention for every step."
+            },
+            "answer": "B"
+        },
+        {
+            "question": "What is a key feature of AI Agents compared to AI Workflows?",
+            "options": {
+                "A": "They follow human commands only.",
+                "B": "They generate data without any input.",
+                "C": "They can reason, decide, and iterate autonomously.",
+                "D": "They are only used for text generation."
+            },
+            "answer": "C"
+        },
+        {
+            "question": "In AI Workflows, what is the role of the human decision-maker?",
+            "options": {
+                "A": "To entirely replace the AI's decision-making.",
+                "B": "To establish and program the path the LLM should follow.",
+                "C": "To monitor AI output without any interaction.",
+                "D": "To provide random inputs without a purpose."
+            },
+            "answer": "B"
+        },
+        {
+            "question": "What does the term 'RAG' stand for in the context of AI?",
+            "options": {
+                "A": "Robotic Automated Generation",
+                "B": "Retrieval Augmented Generation",
+                "C": "Rapid AI Growth",
+                "D": "Random Access Generation"
+            },
+            "answer": "B"
+        }
+    ],
+    "chapters": [
+        {
+            "title": "AI vs. AI Agents",
+            "start_time": "0:00",
+            "end_time": "1:04"
+        },
+        {
+            "title": "Level 1: LLMs",
+            "start_time": "1:04",
+            "end_time": "2:17"
+        },
+        {
+            "title": "Level 2: AI Workflows",
+            "start_time": "2:17",
+            "end_time": "5:26"
+        },
+        {
+            "title": "Level 3: AI Agents",
+            "start_time": "5:26",
+            "end_time": "7:48"
+        },
+        {
+            "title": "Real-world Example",
+            "start_time": "7:48",
+            "end_time": "9:10"
+        },
+        {
+            "title": "Summary",
+            "start_time": "9:10",
+            "end_time": "10:09"
+        }
+    ]
+}

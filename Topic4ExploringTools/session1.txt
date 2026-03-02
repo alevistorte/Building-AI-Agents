@@ -1,0 +1,83 @@
+What topic do you want to learn about? building AI agents
+
+Searching YouTube for: building AI agents
+
+  1) How to Build & Sell AI Agents: Ultimate Beginner’s Guide
+     Channel: Liam Ottley  |  Duration: 3:50:40
+  2) The Easiest Way To Build AI Agents For Beginners (So Easy)
+     Channel: Paul J Lipsky  |  Duration: 13:05
+  3) From Zero to Your First AI Agent in 25 Minutes (No Coding)
+     Channel: Futurepedia and AI Agent Lab  |  Duration: 25:58
+  4) You’re Not Behind (Yet): How to Build AI Agents in 2026 (no coding)
+     Channel: Futurepedia  |  Duration: 26:05
+  5) AI Agents, Clearly Explained
+     Channel: Jeff Su  |  Duration: 10:09
+
+Pick a video (1-5): 5
+
+Selected: AI Agents, Clearly Explained
+Fetching transcript and generating summary/quiz for video ID: FwOTs4UxQS4
+WARNING: [youtube] FwOTs4UxQS4: Some web_safari client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+WARNING: [youtube] FwOTs4UxQS4: Some web client https formats have been skipped as they are missing a url. YouTube is forcing SABR streaming for this client. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+
+============================================================
+VIDEO SUMMARY
+============================================================
+The video explains the concept of AI agents in a straightforward manner, targeting those with no technical background. It introduces three levels of understanding: 1) Large Language Models (LLMs) - applications like ChatGPT that generate and edit text based on user input. However, LLMs have limitations as they do not access personal data or act unless prompted. 2) AI Workflows - a step further where predefined paths direct the LLMs to fetch information from external sources, but they remain controlled by human decisions. Examples illustrate using a workflow for compiling news articles and creating social media posts. 3) AI Agents - the evolution of workflows where LLMs not only follow paths but also reason, decide, and iterate autonomously. An AI agent can analyze data, make decisions, and refine outputs without human intervention, signifying its role as a decision-maker. The video concludes by emphasizing the shift from human-driven workflows to AI-driven decision-making processes.
+============================================================
+
+CHAPTERS
+------------------------------------------------------------
+  [0:00 - 1:04] AI vs. AI Agents
+  [1:04 - 2:17] Level 1: LLMs
+  [2:17 - 5:26] Level 2: AI Workflows
+  [5:26 - 7:48] Level 3: AI Agents
+  [7:48 - 9:10] Real-world Example
+  [9:10 - 10:09] Summary
+------------------------------------------------------------
+
+QUIZ TIME! 5 questions
+
+Question 1: What is a Large Language Model (LLM)?
+  A) An application that generates and edits text based on user input.
+  B) A physical robot that performs tasks.
+  C) A database that stores user information.
+  D) A programming language for AI development.
+Your answer (A/B/C/D): a
+Correct!
+
+Question 2: What does an AI Workflow do?
+  A) It performs tasks autonomously without human input.
+  B) It follows a predefined path set by humans to achieve a specific goal.
+  C) It generates random outputs based on data.
+  D) It requires continuous human intervention for every step.
+Your answer (A/B/C/D): a
+Wrong! The correct answer was B) It follows a predefined path set by humans to achieve a specific goal.
+
+Question 3: What is a key feature of AI Agents compared to AI Workflows?
+  A) They follow human commands only.
+  B) They generate data without any input.
+  C) They can reason, decide, and iterate autonomously.
+  D) They are only used for text generation.
+Your answer (A/B/C/D): a
+Wrong! The correct answer was C) They can reason, decide, and iterate autonomously.
+
+Question 4: In AI Workflows, what is the role of the human decision-maker?
+  A) To entirely replace the AI's decision-making.
+  B) To establish and program the path the LLM should follow.
+  C) To monitor AI output without any interaction.
+  D) To provide random inputs without a purpose.
+Your answer (A/B/C/D): a
+Wrong! The correct answer was B) To establish and program the path the LLM should follow.
+
+Question 5: What does the term 'RAG' stand for in the context of AI?
+  A) Robotic Automated Generation
+  B) Retrieval Augmented Generation
+  C) Rapid AI Growth
+  D) Random Access Generation
+Your answer (A/B/C/D): a
+Wrong! The correct answer was B) Retrieval Augmented Generation
+
+============================================================
+FINAL SCORE: 1/5
+============================================================

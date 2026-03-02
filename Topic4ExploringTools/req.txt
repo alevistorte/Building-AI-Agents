@@ -1,0 +1,5 @@
+youtube-transcript-api
+langchain-openai
+langgraph
+scrapetube
+yt-dlp

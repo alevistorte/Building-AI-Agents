@@ -1,0 +1,76 @@
+What topic do you want to learn about? building AI agents
+
+Searching YouTube for: building AI agents
+
+  1) The Easiest Way To Build AI Agents For Beginners (So Easy)
+     Channel: Paul J Lipsky  |  Duration: 13:05
+  2) How to Build & Sell AI Agents: Ultimate Beginner’s Guide
+     Channel: Liam Ottley  |  Duration: 3:50:40
+  3) Building AI Agents in Pure Python - Beginner Course
+     Channel: Dave Ebbelaar  |  Duration: 46:44
+  4) How to Build Ai Agents with Claude (Part 1)
+     Channel: Upskillpm   |  Duration: 9:26
+  5) AI Agents Explained: A Comprehensive Guide for Beginners
+     Channel: AI Alfie   |  Duration: 6:52
+
+Pick a video (1-5): 1
+
+Selected: The Easiest Way To Build AI Agents For Beginners (So Easy)
+Loading cached results from files/questions_summary_6hPvtbEDMrw.json
+
+============================================================
+VIDEO SUMMARY
+============================================================
+The video introduces viewers to using Zapier for creating AI agents that automate workflows without requiring technical skills. The host demonstrates how to set up an AI agent to manage follow-ups with brands in a mini CRM spreadsheet. By utilizing Zapier's co-pilot feature, users can describe their desired workflow, which simplifies the setup process. The video highlights the integration capabilities of Zapier and showcases its templates for various tasks. Additionally, it explains the difference between traditional workflows and AI agents, emphasizing how agents can handle tasks that require discretion and decision-making. The overall message encourages viewers to try Zapier to automate their tasks effortlessly.
+============================================================
+
+CHAPTERS
+------------------------------------------------------------
+  No chapters available for this video.
+------------------------------------------------------------
+
+QUIZ TIME! 5 questions
+
+Question 1: What tool is used to create AI agents in the video?
+  A) Zapier
+  B) Trello
+  C) Asana
+  D) Google Sheets
+Your answer (A/B/C/D): 1
+Wrong! The correct answer was A) Zapier
+
+Question 2: What is the main benefit of using Zapier's co-pilot feature?
+  A) It requires coding experience.
+  B) It allows users to describe workflows easily.
+  C) It is only available for paid accounts.
+  D) It is used to create graphics.
+Your answer (A/B/C/D): 1
+Wrong! The correct answer was B) It allows users to describe workflows easily.
+
+Question 3: Which of the following is NOT mentioned as a feature of Zapier agents?
+  A) Running on triggers
+  B) Connecting with over 8,000 apps
+  C) Limited to email automation only
+  D) Ability to run automated workflows
+Your answer (A/B/C/D): 1
+Wrong! The correct answer was C) Limited to email automation only
+
+Question 4: What type of tasks do Zapier agents handle effectively?
+  A) Tasks that require no thinking
+  B) Tasks requiring discretion and context-based decisions
+  C) Only simple data entries
+  D) Any task, regardless of complexity
+Your answer (A/B/C/D): 1
+Wrong! The correct answer was B) Tasks requiring discretion and context-based decisions
+
+Question 5: What should you do before deploying an AI agent you've created?
+  A) Publish it immediately
+  B) Test it to ensure it works correctly
+  C) Delete it
+  D) Share it with others
+Your answer (A/B/C/D): 1
+Wrong! The correct answer was B) Test it to ensure it works correctly
+
+============================================================
+FINAL SCORE: 0/5
+============================================================
