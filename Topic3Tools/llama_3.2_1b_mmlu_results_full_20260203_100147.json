@@ -1,0 +1,24 @@
+{
+  "model": "meta-llama/Llama-3.2-1B-Instruct",
+  "quantization_bits": null,
+  "timestamp": "20260203_100147",
+  "device": "mps",
+  "duration_seconds": 20.92929,
+  "overall_accuracy": 37.87234042553192,
+  "total_correct": 89,
+  "total_questions": 235,
+  "subject_results": [
+    {
+      "subject": "abstract_algebra",
+      "correct": 24,
+      "total": 100,
+      "accuracy": 24.0
+    },
+    {
+      "subject": "anatomy",
+      "correct": 65,
+      "total": 135,
+      "accuracy": 48.148148148148145
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+============================================================
+TEST 1: Query requiring tool
+============================================================
+User: What's the weather like in San Francisco?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: get_weather
+  Args: {'location': 'San Francisco'}
+  Result: Sunny, 72°F
+
+--- Iteration 2 ---
+Assistant: The weather in San Francisco is sunny with a temperature of 72°F.
+
+
+============================================================
+TEST 2: Query not requiring tool
+============================================================
+User: Say hello!
+
+--- Iteration 1 ---
+Assistant: Hello! How can I assist you today?
+
+
+============================================================
+TEST 3: Multiple tool calls
+============================================================
+User: What's the weather in New York and London?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: get_weather
+  Args: {'location': 'New York'}
+  Result: Cloudy, 55°F
+  Tool: get_weather
+  Args: {'location': 'London'}
+  Result: Rainy, 48°F
+
+--- Iteration 2 ---
+Assistant: The current weather is as follows:
+- New York: Cloudy, 55°F
+- London: Rainy, 48°F
+
+
+============================================================
+TEST 4: Calculator - math expression
+============================================================
+User: What is 25 * 4 + 10?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation":"evaluate","expression":"25 * 4 + 10"}'}
+  Result: {"result": 110}
+
+--- Iteration 2 ---
+Assistant: The result of the calculation \( 25 \times 4 + 10 \) is 110.
+
+
+============================================================
+TEST 5: Calculator - geometric function
+============================================================
+User: What is the area of a circle with radius 7?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation": "circle_area", "radius": 7}'}
+  Result: {"result": 153.93804}
+
+--- Iteration 2 ---
+Assistant: The area of a circle with a radius of 7 is approximately 153.94 square units.
+
+
+============================================================
+TEST 6: Calculator - sphere volume
+============================================================
+User: What is the volume of a sphere with radius 3?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation":"sphere_volume","radius":3}'}
+  Result: {"result": 113.097336}
+
+--- Iteration 2 ---
+Assistant: The volume of a sphere with a radius of 3 is approximately \( 113.10 \) cubic units.
+
+
+============================================================
+TEST 7: Calculator - cylinder volume
+============================================================
+User: What is the volume of a cylinder with radius 4 and height 10?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation":"cylinder_volume","radius":4,"height":10}'}
+  Result: {"result": 502.654825}
+
+--- Iteration 2 ---
+Assistant: The volume of a cylinder with a radius of 4 and a height of 10 is approximately 502.65 cubic units.
+
+
+============================================================
+TEST 8: Calculator - triangle area
+============================================================
+User: What is the area of a triangle with base 12 and height 5?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation":"triangle_area","base":12,"height":5}'}
+  Result: {"result": 30.0}
+
+--- Iteration 2 ---
+Assistant: The area of the triangle with a base of 12 units and a height of 5 units is 30 square units.
+
+
+============================================================
+TEST 9: Multi-tool query (weather + calculator)
+============================================================
+User: What's the weather in Tokyo, and what's the area of a rectangle that is 8 by 15?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: get_weather
+  Args: {'location': 'Tokyo'}
+  Result: Clear, 65°F
+  Tool: calculator
+  Args: {'input': '{"operation": "rectangle_area", "length": 8, "width": 15}'}
+  Result: {"result": 120}
+
+--- Iteration 2 ---
+Assistant: The weather in Tokyo is clear with a temperature of 65°F. Additionally, the area of a rectangle that is 8 by 15 is 120 square units.
+
+
+============================================================
+TEST 10: Calculator - cone volume
+============================================================
+User: What is the volume of a cone with radius 6 and height 9?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation":"cone_volume","radius":6,"height":9}'}
+  Result: {"result": 339.292007}
+
+--- Iteration 2 ---
+Assistant: The volume of a cone with a radius of 6 and a height of 9 is approximately 339.29 cubic units.
+
+============================================================
+TEST 11: Weather in Paris (not in dataset)
+============================================================
+User: What's the weather like in Paris?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: get_weather
+  Args: {'location': 'Paris'}
+  Result: Weather data not available for Paris
+
+--- Iteration 2 ---
+Assistant: I currently cannot retrieve the weather data for Paris. You may want to check a weather website or app for the latest updates.
+
+
+============================================================
+TEST 12: Letter count - s in Mississippi riverboats
+============================================================
+User: How many s are in Mississippi riverboats?
+
+--- Iteration 1 ---
+LLM wants to call 1 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 's'}
+  Result: {"letter": "s", "text": "Mississippi riverboats", "count": 5}
+
+--- Iteration 2 ---
+Assistant: There are 5 occurrences of the letter "s" in "Mississippi riverboats."
+
+
+============================================================
+TEST 13: Counting multiple letters
+============================================================
+User: Are there more i's than s's in Mississippi riverboats?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 'i'}
+  Result: {"letter": "i", "text": "Mississippi riverboats", "count": 5}
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 's'}
+  Result: {"letter": "s", "text": "Mississippi riverboats", "count": 5}
+
+--- Iteration 2 ---
+Assistant: In the phrase "Mississippi riverboats," there are 5 occurrences of the letter 'i' and 5 occurrences of the letter 's'. Therefore, there are not more i's than s's; they are equal in number.
+
+
+============================================================
+TEST 14: Combining all tools in one query
+============================================================
+User: I'm planning a company offsite and need help with logistics. We're considering San Francisco, New York, and London — what's the weather in each? Our total venue budget is the same as the area of a rectangle 60 by 35 feet. Catering will cost 480 + 320 dollars — how much of the budget is left after that? Finally, the event name is 'Bay Area Tech Explorers' — how many times does the letter 'e' appear in it, so I can use it as a themed trivia question for the team?
+
+--- Iteration 1 ---
+LLM wants to call 6 tool(s)
+  Tool: get_weather
+  Args: {'location': 'San Francisco'}
+  Result: Sunny, 72°F
+  Tool: get_weather
+  Args: {'location': 'New York'}
+  Result: Cloudy, 55°F
+  Tool: get_weather
+  Args: {'location': 'London'}
+  Result: Rainy, 48°F
+  Tool: calculator
+  Args: {'input': '{"operation": "rectangle_area", "length": 60, "width": 35}'}
+  Result: {"result": 2100}
+  Tool: calculator
+  Args: {'input': '{"operation": "evaluate", "expression": "480 + 320"}'}
+  Result: {"result": 800}
+  Tool: count_letter
+  Args: {'text': 'Bay Area Tech Explorers', 'letter': 'e'}
+  Result: {"letter": "e", "text": "Bay Area Tech Explorers", "count": 4}
+
+--- Iteration 2 ---
+Assistant: Here's the information regarding your event logistics:
+
+### Weather
+- **San Francisco**: Sunny, 72°F
+- **New York**: Cloudy, 55°F
+- **London**: Rainy, 48°F
+
+### Venue Budget Calculation
+- **Area of Rectangle**: 60 feet x 35 feet = **2100 square feet**
+- **Catering Costs**: 480 + 320 = **800 dollars**
+- **Remaining Budget**: 2100 - 800 = **1300 dollars**
+
+### Themed Trivia Question
+- The letter **'e'** appears **4 times** in the event name "Bay Area Tech Explorers".
+
+Feel free to ask if you need any more assistance!
