@@ -1,0 +1,79 @@
+Starting new session: 20260301_213255
+Type 'quit' or 'exit' to end.
+
+You: hello
+
+Assistant: Hello! How can I assist you today?
+
+You: my name is pepe
+
+Assistant: Nice to meet you, Pepe! How can I help you today?
+
+You: I am trying to learn how to build AI agents
+
+Assistant: That's great, Pepe! Building AI agents can be a fascinating journey. There are several key areas you might want to focus on:
+
+1. **Programming Languages**: Familiarize yourself with languages commonly used in AI, such as Python, which has a rich ecosystem of libraries for data science and machine learning (like TensorFlow, PyTorch, and scikit-learn).
+
+2. **Machine Learning Concepts**: Learn about supervised and unsupervised learning, neural networks, decision trees, etc. Online courses or textbooks on machine learning can be very helpful.
+
+3. **Natural Language Processing (NLP)**: If you're interested in creating conversational AI like chatbots, studying NLP concepts will be essential.
+
+4. **Reinforcement Learning**: This area focuses on training agents through trial and error, useful for game-playing AI.
+
+5. **Practical Projects**: Start working on small projects that interest you. Building something tangible can reinforce your learning.
+
+6. **Online Communities**: Join forums or communities focused on AI and machine learning where you can ask questions, share ideas, and collaborate with others.
+
+Is there a specific area within AI that you're particularly interested in?
+
+You: thanks for that
+
+Assistant: You're welcome, Pepe! If you have any more questions or need further guidance on AI or anything else, feel free to ask!
+
+You: Session saved. Goodbye.
+(base) ➜  Building-AI-Agents git:(main) ✗ /opt/miniconda3/bin/python /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic3Tools/langgraph-tool-handling.py
+
+Existing sessions:
+  1. 20260301_213255
+Enter a number to resume, or press Enter to start new: 1
+
+Resuming session: 20260301_213255
+Type 'quit' or 'exit' to end.
+
+You: do you remember my name?
+
+Assistant: Yes, your name is Pepe. How can I help you further today?
+
+You: i forgot what I was trying to learn
+
+Assistant: No problem! You mentioned that you were trying to learn how to build AI agents. Would you like me to go over the key areas again, or is there something else specific you want to explore?
+
+You: sure
+
+Assistant: Here are the key areas to focus on when learning how to build AI agents:
+
+1. **Programming Languages**: 
+   - **Python**: It's the most popular language for AI due to its simplicity and extensive libraries like TensorFlow, PyTorch, and scikit-learn.
+
+2. **Machine Learning Concepts**: 
+   - Understand the basics of machine learning, including supervised learning, unsupervised learning, and popular algorithms (like decision trees, support vector machines, and neural networks).
+
+3. **Natural Language Processing (NLP)**: 
+   - If you're interested in creating chatbots or conversational agents, study NLP to understand how machines understand and generate human language.
+
+4. **Reinforcement Learning**: 
+   - This area involves training agents to make decisions through trial and error, useful for applications like game-playing AI.
+
+5. **Practical Projects**: 
+   - Start small by building simple AI applications to solidify your understanding. Projects could include implementing a basic chatbot, a recommendation system, or a simple game AI.
+
+6. **Online Learning Resources**: 
+   - Consider taking online courses on platforms like Coursera, edX, or Udacity. There are also many tutorials available on YouTube and GitHub that can help you learn.
+
+7. **Community Engagement**: 
+   - Join AI and machine learning communities, online forums, or study groups to collaborate, ask questions, and share your progress.
+
+If you're interested in a specific project or have any questions about any of these areas, let me know!
+
+You: Session saved. Goodbye.
