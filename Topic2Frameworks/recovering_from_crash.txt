@@ -1,0 +1,242 @@
+Starting new session: 20260301_205241
+Chat log: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/chat_log_20260301_205241.txt
+Using MPS (Apple Silicon) for inference
+
+Loading Llama-3.2-1B-Instruct...
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+  meta-llama/Llama-3.2-1B-Instruct loaded successfully!
+
+Loading Qwen2.5-1.5B-Instruct...
+Loading model: Qwen/Qwen2.5-1.5B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+  Qwen/Qwen2.5-1.5B-Instruct loaded successfully!
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> hello, my name is alejandro
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+Hello Alejandro, it's nice to meet you. Is everything okay?
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> I am doing all right. YOu?
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+I'm doing well, Alejandro. I've been processing your previous message. It seems like you're looking for something.
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> might be
+
+[Llama] Processing...
+^CTraceback (most recent call last):
+  File "/Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/langgraph_simple_llama_agent.py", line 617, in <module>
+    main()
+    ~~~~^^
+  File "/Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/langgraph_simple_llama_agent.py", line 609, in main
+    graph.invoke(initial_state, config=config)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langgraph/pregel/main.py", line 3071, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langgraph/pregel/main.py", line 2646, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langgraph/pregel/_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langgraph/pregel/_retry.py", line 42, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langgraph/_internal/_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "/opt/miniconda3/lib/python3.13/site-packages/langgraph/_internal/_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "/Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/langgraph_simple_llama_agent.py", line 337, in call_llama
+    ai_msg: AIMessage = llama_llm.invoke(messages)
+                        ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 402, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 1121, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 931, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/opt/miniconda3/lib/python3.13/site-packages/langchain_core/language_models/chat_models.py", line 1233, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/opt/miniconda3/lib/python3.13/site-packages/langchain_huggingface/chat_models/huggingface.py", line 759, in _generate
+    llm_result = self.llm._generate(
+        prompts=[llm_input], stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "/opt/miniconda3/lib/python3.13/site-packages/langchain_huggingface/llms/huggingface_pipeline.py", line 332, in _generate
+    responses = self.pipeline(
+        batch_prompts,
+        **pipeline_kwargs,
+    )
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/pipelines/text_generation.py", line 332, in __call__
+    return super().__call__(text_inputs, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/pipelines/base.py", line 1448, in __call__
+    outputs = list(final_iterator)
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/pipelines/pt_utils.py", line 126, in __next__
+    item = next(self.iterator)
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/pipelines/pt_utils.py", line 127, in __next__
+    processed = self.infer(item, **self.params)
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/pipelines/base.py", line 1374, in forward
+    model_outputs = self._forward(model_inputs, **forward_params)
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/pipelines/text_generation.py", line 432, in _forward
+    output = self.model.generate(input_ids=input_ids, attention_mask=attention_mask, **generate_kwargs)
+  File "/opt/miniconda3/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/generation/utils.py", line 2545, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/opt/miniconda3/lib/python3.13/site-packages/transformers/generation/utils.py", line 2814, in _sample
+    next_tokens = torch.multinomial(probs, num_samples=1).squeeze(1)
+                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+(base) ➜  Building-AI-Agents git:(main) ✗ /opt/miniconda3/bin/python /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/langgraph_simple_llama_agent.py
+==================================================
+LangGraph Multi-Party Chat: Human + Llama + Qwen
+  Start with 'Hey Qwen' to address Qwen.
+  All other input goes to Llama.
+==================================================
+
+
+Existing sessions found:
+  1. 20260301_205241  (2 turn(s) logged)
+
+Enter a number to resume, or press Enter to start new: 1
+
+Resuming session: 20260301_205241
+
+--- Previous conversation ---
+[Human] hello, my name is alejandro
+[Llama] Hello Alejandro, it's nice to meet you. Is everything okay?
+
+[Human] I am doing all right. YOu?
+[Llama] I'm doing well, Alejandro. I've been processing your previous message. It seems like you're looking for something.
+--- Resuming from here ---
+Chat log: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/chat_log_20260301_205241.txt
+Using MPS (Apple Silicon) for inference
+
+Loading Llama-3.2-1B-Instruct...
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+  meta-llama/Llama-3.2-1B-Instruct loaded successfully!
+
+Loading Qwen2.5-1.5B-Instruct...
+Loading model: Qwen/Qwen2.5-1.5B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+  Qwen/Qwen2.5-1.5B-Instruct loaded successfully!
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> do you remember my name?
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+I recall that you mentioned your name earlier. It's Alejandro, right?
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> yeah. You remembered even after a crash in the execution
+
+[Llama] Processing...
+
+==================================================
+Llama response:
+--------------------------------------------------
+I'm glad to hear that I was able to recall your name correctly. The crash you mentioned earlier must have affected my processing capabilities temporarily.
+==================================================
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> exit
+Goodbye!

@@ -13,7 +13,13 @@
 #
 # The LLMs use Cuda if available, MPS (Apple Silicon) if available, else CPU.
 # After the graph is built, a Mermaid PNG of the graph is saved to lg_graph.png.
+#
+# Crash recovery via LangGraph checkpointing:
+# State is saved to a SQLite database (chat_sessions.db) after every node.
+# On restart the program lists existing sessions and lets the user resume one,
+# picking up exactly where the conversation left off.
 
+import sqlite3
 import torch
 from datetime import datetime
 from pathlib import Path
@@ -22,6 +28,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from langchain_huggingface import HuggingFacePipeline, ChatHuggingFace
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage
 from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.sqlite import SqliteSaver
 
 SCRIPT_DIR = Path(__file__).parent
 
@@ -154,7 +161,7 @@ def create_qwen_llm(device: str) -> ChatHuggingFace:
 # =============================================================================
 
 def create_graph(llama_llm: ChatHuggingFace, qwen_llm: ChatHuggingFace,
-                 log_path: Path):
+                 log_path: Path, checkpointer: SqliteSaver):
     """
     Build the LangGraph state graph with four nodes:
       1. get_user_input  – read stdin; append HumanMessage to shared history
@@ -166,9 +173,11 @@ def create_graph(llama_llm: ChatHuggingFace, qwen_llm: ChatHuggingFace,
              everything else → call_llama.
 
     Args:
-        llama_llm: ChatHuggingFace wrapper for Llama-3.2-1B-Instruct
-        qwen_llm:  ChatHuggingFace wrapper for Qwen2.5-1.5B-Instruct
-        log_path:  Path to the chat log file; each completed turn is appended
+        llama_llm:    ChatHuggingFace wrapper for Llama-3.2-1B-Instruct
+        qwen_llm:     ChatHuggingFace wrapper for Qwen2.5-1.5B-Instruct
+        log_path:     Path to the chat log file; each completed turn is appended
+        checkpointer: SqliteSaver instance; state is persisted after every node
+                      so the graph can resume from the last checkpoint on restart
     """
 
     # -------------------------------------------------------------------------
@@ -447,7 +456,10 @@ def create_graph(llama_llm: ChatHuggingFace, qwen_llm: ChatHuggingFace,
     graph_builder.add_edge("call_qwen",      "print_response")
     graph_builder.add_edge("print_response", "get_user_input")
 
-    return graph_builder.compile()
+    # Attach the checkpointer so LangGraph persists state to SQLite after
+    # every node.  On restart, invoke() with the same thread_id will find the
+    # checkpoint and resume from the next pending node automatically.
+    return graph_builder.compile(checkpointer=checkpointer)
 
 
 def save_graph_image(graph, filename="lg_graph.png"):
@@ -463,22 +475,75 @@ def save_graph_image(graph, filename="lg_graph.png"):
         print("You may need to install: pip install grandalf")
 
 
+def list_sessions(db_path: Path) -> List[str]:
+    """
+    Return thread IDs of existing sessions stored in the checkpoint database,
+    ordered newest-first.  Returns an empty list if the database does not yet
+    exist or has no sessions.
+    """
+    if not db_path.exists():
+        return []
+    try:
+        conn = sqlite3.connect(str(db_path))
+        cursor = conn.execute(
+            "SELECT DISTINCT thread_id FROM checkpoints ORDER BY thread_id DESC"
+        )
+        sessions = [row[0] for row in cursor.fetchall()]
+        conn.close()
+        return sessions
+    except Exception:
+        return []
+
+
+def select_session(db_path: Path) -> tuple:
+    """
+    If existing sessions are found in the checkpoint database, display them
+    and let the user choose one to resume.  Otherwise (or if the user presses
+    Enter without a selection) create a new session with a timestamp-based ID.
+
+    Returns:
+        (thread_id: str, is_new: bool)
+            thread_id – identifier for this run (used as LangGraph thread_id)
+            is_new    – True when starting a brand-new session
+    """
+    sessions = list_sessions(db_path)
+
+    if sessions:
+        print("\nExisting sessions found:")
+        for i, session_id in enumerate(sessions, 1):
+            log = db_path.parent / f"chat_log_{session_id}.txt"
+            turns = log.read_text(encoding="utf-8").count("\n\n") if log.exists() else 0
+            print(f"  {i}. {session_id}  ({turns} turn(s) logged)")
+        print()
+        choice = input("Enter a number to resume, or press Enter to start new: ").strip()
+        if choice.isdigit():
+            idx = int(choice) - 1
+            if 0 <= idx < len(sessions):
+                return sessions[idx], False
+
+    new_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    return new_id, True
+
+
 def main():
     """
-    Start the multi-party chat agent.
+    Start the multi-party chat agent with crash recovery via checkpointing.
 
-    Loads both Llama and Qwen, builds the graph, then loops until the user
-    types 'quit', 'exit', or 'q'.
+    Checkpointing:
+        LangGraph saves the full AgentState to chat_sessions.db after every
+        node completes.  On restart, select_session() lists existing sessions
+        and the user can resume one.  graph.invoke() with the same thread_id
+        and an empty input dict ({}) resumes from the last saved checkpoint,
+        so nothing is lost even if the process was killed mid-turn.
 
-    Shared history grows each turn:
+    Session files (all in the same directory as this script):
+        chat_sessions.db          – SQLite checkpoint database (all sessions)
+        chat_log_<thread_id>.txt  – Human-readable turn log for each session
+
+    Shared history:
         Human turn  : get_user_input appends {speaker:"Human",  content:...}
         Llama turn  : call_llama     appends {speaker:"Llama",  content:...}
         Qwen turn   : call_qwen      appends {speaker:"Qwen",   content:...}
-
-    Each model receives a tailored view of that history:
-        Own past turns → AIMessage   ("assistant" role)
-        All other turns → HumanMessage ("user" role)
-    with every message prefixed by the speaker's name.
     """
     print("=" * 50)
     print("LangGraph Multi-Party Chat: Human + Llama + Qwen")
@@ -487,6 +552,28 @@ def main():
     print("=" * 50)
     print()
 
+    # -------------------------------------------------------------------------
+    # Session selection: resume an existing session or start a new one.
+    # The checkpoint database is shared across all sessions.
+    # -------------------------------------------------------------------------
+    db_path = SCRIPT_DIR / "chat_sessions.db"
+    thread_id, is_new = select_session(db_path)
+    log_path = SCRIPT_DIR / f"chat_log_{thread_id}.txt"
+
+    if is_new:
+        print(f"\nStarting new session: {thread_id}")
+    else:
+        print(f"\nResuming session: {thread_id}")
+        if log_path.exists():
+            print("\n--- Previous conversation ---")
+            print(log_path.read_text(encoding="utf-8").rstrip())
+            print("--- Resuming from here ---")
+
+    print(f"Chat log: {log_path}")
+
+    # -------------------------------------------------------------------------
+    # Load models and build graph.
+    # -------------------------------------------------------------------------
     device = get_device()
 
     print("\nLoading Llama-3.2-1B-Instruct...")
@@ -495,27 +582,35 @@ def main():
     print("\nLoading Qwen2.5-1.5B-Instruct...")
     qwen_llm = create_qwen_llm(device)
 
-    # Create a timestamped log file for this session
-    log_path = SCRIPT_DIR / f"chat_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-    print(f"\nChat log: {log_path}")
+    # Open the SQLite checkpoint database.  check_same_thread=False is required
+    # because LangGraph may access the connection from a worker thread.
+    conn = sqlite3.connect(str(db_path), check_same_thread=False)
+    checkpointer = SqliteSaver(conn)
 
     print("\nCreating LangGraph...")
-    graph = create_graph(llama_llm, qwen_llm, log_path)
+    graph = create_graph(llama_llm, qwen_llm, log_path, checkpointer)
     print("Graph created successfully!")
 
     print("\nSaving graph visualization...")
     save_graph_image(graph)
 
-    # history starts empty; the first Human message is added by get_user_input
-    initial_state: AgentState = {
-        "user_input":   "",
-        "should_exit":  False,
-        "verbose":      False,
-        "llm_response": "",
-        "history":      [],
-    }
+    # config identifies which checkpoint thread to read from / write to
+    config = {"configurable": {"thread_id": thread_id}}
 
-    graph.invoke(initial_state)
+    if is_new:
+        # New session: supply the full initial state
+        initial_state: AgentState = {
+            "user_input":   "",
+            "should_exit":  False,
+            "verbose":      False,
+            "llm_response": "",
+            "history":      [],
+        }
+        graph.invoke(initial_state, config=config)
+    else:
+        # Resumed session: pass an empty dict so the checkpoint state is used
+        # as-is and the graph continues from the last saved node.
+        graph.invoke({}, config=config)
 
 
 if __name__ == "__main__":
