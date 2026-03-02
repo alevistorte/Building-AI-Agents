@@ -240,3 +240,26 @@ Assistant: Here's the information regarding your event logistics:
 - The letter **'e'** appears **4 times** in the event name "Bay Area Tech Explorers".
 
 Feel free to ask if you need any more assistance!
+
+============================================================
+TEST 15: Counting multiple letters and calculating sine
+============================================================
+User: What is the sin of the difference between the number of i's and the number of s's in Mississippi riverboats?
+
+--- Iteration 1 ---
+LLM wants to call 2 tool(s)
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 'i'}
+  Result: {"letter": "i", "text": "Mississippi riverboats", "count": 5}
+  Tool: count_letter
+  Args: {'text': 'Mississippi riverboats', 'letter': 's'}
+  Result: {"letter": "s", "text": "Mississippi riverboats", "count": 5}
+
+--- Iteration 2 ---
+LLM wants to call 1 tool(s)
+  Tool: calculator
+  Args: {'input': '{"operation": "evaluate", "expression": "sin(5 - 5)"}'}
+  Result: {"result": 0.0}
+
+--- Iteration 3 ---
+Assistant: The sine of the difference between the number of i's (5) and the number of s's (5) in "Mississippi riverboats" is \( \sin(0) = 0.0 \).

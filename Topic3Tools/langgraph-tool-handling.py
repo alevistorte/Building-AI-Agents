@@ -268,3 +268,8 @@ if __name__ == "__main__":
     print("TEST 14: Combining all tools in one query")
     print("="*60)
     run_agent("I'm planning a company offsite and need help with logistics. We're considering San Francisco, New York, and London — what's the weather in each? Our total venue budget is the same as the area of a rectangle 60 by 35 feet. Catering will cost 480 + 320 dollars — how much of the budget is left after that? Finally, the event name is 'Bay Area Tech Explorers' — how many times does the letter 'e' appear in it, so I can use it as a themed trivia question for the team?")
+
+    print("\n" + "="*60)
+    print("TEST 15: Counting multiple letters and calculating sine")
+    print("="*60)
+    run_agent("What is the sin of the difference between the number of i's and the number of s's in Mississippi riverboats?")
