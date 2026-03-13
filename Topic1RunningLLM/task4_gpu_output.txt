@@ -1,0 +1,81 @@
+
+======================================================================
+Llama 3.2-1B MMLU Evaluation (Quantized)
+======================================================================
+
+======================================================================
+Environment Check
+======================================================================
+✓ Running locally (not in Colab)
+✓ Platform: Darwin (arm64)
+✓ Processor: arm
+✓ Apple Metal (MPS) Available
+✓ Using Metal Performance Shaders for GPU acceleration
+✓ Quantization disabled - loading full precision model
+✓ Hugging Face authenticated
+
+======================================================================
+Configuration
+======================================================================
+Model: meta-llama/Llama-3.2-1B-Instruct
+Device: mps
+Quantization: None (full precision)
+Expected memory: ~2.5 GB (FP16)
+Number of subjects: 2
+======================================================================
+
+
+Loading model meta-llama/Llama-3.2-1B-Instruct...
+Device: mps
+✓ Tokenizer loaded
+Loading model (this may take 2-3 minutes)...
+✓ Model loaded successfully!
+  Model device: mps:0
+  Model dtype: torch.float16
+  Running on Apple Metal (MPS)
+
+======================================================================
+Starting evaluation on 2 subjects
+======================================================================
+
+
+Progress: 1/2 subjects
+
+======================================================================
+Evaluating subject: astronomy
+======================================================================
+Testing astronomy:   0%|          | 0/152 [00:00<?, ?it/s]The following generation flags are not valid and may be ignored: ['top_p']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Testing astronomy:   1%|          | 1/152 [00:02<05:08,  2.04s/it]Testing astronomy:   1%|▏         | 2/152 [00:02<02:15,  1.10it/s]Testing astronomy:   2%|▏         | 3/152 [00:02<01:23,  1.79it/s]Testing astronomy:   3%|▎         | 4/152 [00:02<00:57,  2.58it/s]Testing astronomy:   3%|▎         | 5/152 [00:02<00:43,  3.39it/s]Testing astronomy:   4%|▍         | 6/152 [00:02<00:33,  4.37it/s]Testing astronomy:   5%|▍         | 7/152 [00:03<00:46,  3.12it/s]Testing astronomy:   6%|▌         | 9/152 [00:03<00:32,  4.40it/s]Testing astronomy:   7%|▋         | 10/152 [00:03<00:30,  4.71it/s]Testing astronomy:   8%|▊         | 12/152 [00:03<00:22,  6.29it/s]Testing astronomy:   9%|▊         | 13/152 [00:03<00:20,  6.84it/s]Testing astronomy:   9%|▉         | 14/152 [00:04<00:20,  6.88it/s]Testing astronomy:  10%|▉         | 15/152 [00:04<00:18,  7.41it/s]Testing astronomy:  11%|█         | 17/152 [00:04<00:15,  8.94it/s]Testing astronomy:  12%|█▏        | 18/152 [00:04<00:15,  8.80it/s]Testing astronomy:  13%|█▎        | 20/152 [00:04<00:14,  8.96it/s]Testing astronomy:  14%|█▍        | 22/152 [00:04<00:13,  9.72it/s]Testing astronomy:  15%|█▌        | 23/152 [00:04<00:13,  9.26it/s]Testing astronomy:  16%|█▋        | 25/152 [00:05<00:12, 10.49it/s]Testing astronomy:  18%|█▊        | 27/152 [00:05<00:11, 10.97it/s]Testing astronomy:  19%|█▉        | 29/152 [00:05<00:11, 11.12it/s]Testing astronomy:  20%|██        | 31/152 [00:05<00:11, 10.12it/s]Testing astronomy:  22%|██▏       | 33/152 [00:05<00:12,  9.53it/s]Testing astronomy:  22%|██▏       | 34/152 [00:06<00:12,  9.17it/s]Testing astronomy:  23%|██▎       | 35/152 [00:06<00:13,  8.93it/s]Testing astronomy:  24%|██▎       | 36/152 [00:06<00:13,  8.79it/s]Testing astronomy:  24%|██▍       | 37/152 [00:06<00:13,  8.62it/s]Testing astronomy:  25%|██▌       | 38/152 [00:06<00:12,  8.94it/s]Testing astronomy:  26%|██▌       | 39/152 [00:06<00:12,  8.80it/s]Testing astronomy:  26%|██▋       | 40/152 [00:06<00:13,  8.57it/s]Testing astronomy:  27%|██▋       | 41/152 [00:06<00:14,  7.63it/s]Testing astronomy:  28%|██▊       | 43/152 [00:07<00:11,  9.69it/s]Testing astronomy:  30%|██▉       | 45/152 [00:07<00:10, 10.57it/s]Testing astronomy:  31%|███       | 47/152 [00:07<00:09, 11.25it/s]Testing astronomy:  32%|███▏      | 49/152 [00:07<00:08, 12.62it/s]Testing astronomy:  34%|███▎      | 51/152 [00:07<00:08, 12.25it/s]Testing astronomy:  35%|███▍      | 53/152 [00:07<00:07, 13.43it/s]Testing astronomy:  36%|███▌      | 55/152 [00:07<00:07, 13.68it/s]Testing astronomy:  38%|███▊      | 57/152 [00:08<00:08, 11.36it/s]Testing astronomy:  39%|███▉      | 59/152 [00:08<00:07, 11.64it/s]Testing astronomy:  40%|████      | 61/152 [00:08<00:07, 11.57it/s]Testing astronomy:  41%|████▏     | 63/152 [00:08<00:07, 11.26it/s]Testing astronomy:  43%|████▎     | 65/152 [00:08<00:07, 11.79it/s]Testing astronomy:  44%|████▍     | 67/152 [00:09<00:08, 10.57it/s]Testing astronomy:  45%|████▌     | 69/152 [00:09<00:08, 10.07it/s]Testing astronomy:  47%|████▋     | 71/152 [00:09<00:07, 10.72it/s]Testing astronomy:  48%|████▊     | 73/152 [00:09<00:07, 10.55it/s]Testing astronomy:  49%|████▉     | 75/152 [00:09<00:07, 10.70it/s]Testing astronomy:  51%|█████     | 77/152 [00:09<00:06, 10.95it/s]Testing astronomy:  52%|█████▏    | 79/152 [00:10<00:06, 10.88it/s]Testing astronomy:  53%|█████▎    | 81/152 [00:10<00:07, 10.07it/s]Testing astronomy:  55%|█████▍    | 83/152 [00:10<00:06, 10.68it/s]Testing astronomy:  56%|█████▌    | 85/152 [00:10<00:06, 10.20it/s]Testing astronomy:  57%|█████▋    | 87/152 [00:10<00:06, 10.26it/s]Testing astronomy:  59%|█████▊    | 89/152 [00:11<00:06,  9.80it/s]Testing astronomy:  60%|█████▉    | 91/152 [00:11<00:06, 10.06it/s]Testing astronomy:  61%|██████    | 93/152 [00:11<00:05,  9.96it/s]Testing astronomy:  62%|██████▎   | 95/152 [00:11<00:05,  9.68it/s]Testing astronomy:  64%|██████▍   | 97/152 [00:11<00:05, 10.71it/s]Testing astronomy:  65%|██████▌   | 99/152 [00:12<00:04, 11.62it/s]Testing astronomy:  66%|██████▋   | 101/152 [00:12<00:04, 11.05it/s]Testing astronomy:  68%|██████▊   | 103/152 [00:12<00:04, 11.97it/s]Testing astronomy:  69%|██████▉   | 105/152 [00:12<00:04, 11.67it/s]Testing astronomy:  70%|███████   | 107/152 [00:12<00:03, 12.18it/s]Testing astronomy:  72%|███████▏  | 109/152 [00:12<00:03, 11.74it/s]Testing astronomy:  73%|███████▎  | 111/152 [00:13<00:03, 11.04it/s]Testing astronomy:  74%|███████▍  | 113/152 [00:13<00:03, 11.57it/s]Testing astronomy:  76%|███████▌  | 115/152 [00:13<00:03, 10.62it/s]Testing astronomy:  77%|███████▋  | 117/152 [00:13<00:03,  9.54it/s]Testing astronomy:  78%|███████▊  | 119/152 [00:13<00:03,  9.95it/s]Testing astronomy:  80%|███████▉  | 121/152 [00:14<00:03,  9.95it/s]Testing astronomy:  81%|████████  | 123/152 [00:14<00:02, 10.68it/s]Testing astronomy:  82%|████████▏ | 125/152 [00:14<00:02, 11.56it/s]Testing astronomy:  84%|████████▎ | 127/152 [00:14<00:02, 11.05it/s]Testing astronomy:  85%|████████▍ | 129/152 [00:14<00:01, 11.54it/s]Testing astronomy:  86%|████████▌ | 131/152 [00:15<00:02, 10.26it/s]Testing astronomy:  88%|████████▊ | 133/152 [00:15<00:01, 10.58it/s]Testing astronomy:  89%|████████▉ | 135/152 [00:15<00:01, 10.86it/s]Testing astronomy:  90%|█████████ | 137/152 [00:15<00:01, 10.81it/s]Testing astronomy:  91%|█████████▏| 139/152 [00:16<00:02,  5.32it/s]Testing astronomy:  93%|█████████▎| 141/152 [00:16<00:01,  6.55it/s]Testing astronomy:  94%|█████████▍| 143/152 [00:16<00:01,  7.50it/s]Testing astronomy:  95%|█████████▌| 145/152 [00:16<00:00,  8.88it/s]Testing astronomy:  97%|█████████▋| 147/152 [00:16<00:00, 10.36it/s]Testing astronomy:  98%|█████████▊| 149/152 [00:17<00:00, 12.07it/s]Testing astronomy:  99%|█████████▉| 151/152 [00:17<00:00, 12.44it/s]Testing astronomy: 100%|██████████| 152/152 [00:17<00:00,  8.80it/s]
+✓ Result: 76/152 correct = 50.00%
+
+Progress: 2/2 subjects
+
+======================================================================
+Evaluating subject: business_ethics
+======================================================================
+Testing business_ethics:   0%|          | 0/100 [00:00<?, ?it/s]Testing business_ethics:   1%|          | 1/100 [00:00<00:12,  8.02it/s]Testing business_ethics:   3%|▎         | 3/100 [00:00<00:07, 12.49it/s]Testing business_ethics:   5%|▌         | 5/100 [00:00<00:07, 12.84it/s]Testing business_ethics:   7%|▋         | 7/100 [00:00<00:07, 12.14it/s]Testing business_ethics:   9%|▉         | 9/100 [00:00<00:07, 11.61it/s]Testing business_ethics:  11%|█         | 11/100 [00:00<00:06, 12.73it/s]Testing business_ethics:  13%|█▎        | 13/100 [00:01<00:06, 12.67it/s]Testing business_ethics:  15%|█▌        | 15/100 [00:01<00:05, 14.21it/s]Testing business_ethics:  17%|█▋        | 17/100 [00:01<00:05, 14.36it/s]Testing business_ethics:  19%|█▉        | 19/100 [00:01<00:06, 13.41it/s]Testing business_ethics:  21%|██        | 21/100 [00:01<00:06, 12.66it/s]Testing business_ethics:  23%|██▎       | 23/100 [00:01<00:05, 12.90it/s]Testing business_ethics:  25%|██▌       | 25/100 [00:01<00:05, 12.90it/s]Testing business_ethics:  27%|██▋       | 27/100 [00:02<00:05, 13.67it/s]Testing business_ethics:  29%|██▉       | 29/100 [00:02<00:05, 13.43it/s]Testing business_ethics:  31%|███       | 31/100 [00:02<00:05, 13.17it/s]Testing business_ethics:  33%|███▎      | 33/100 [00:02<00:05, 12.70it/s]Testing business_ethics:  35%|███▌      | 35/100 [00:02<00:05, 11.29it/s]Testing business_ethics:  37%|███▋      | 37/100 [00:02<00:05, 11.72it/s]Testing business_ethics:  39%|███▉      | 39/100 [00:03<00:05, 11.09it/s]Testing business_ethics:  41%|████      | 41/100 [00:03<00:04, 11.96it/s]Testing business_ethics:  43%|████▎     | 43/100 [00:03<00:05, 10.93it/s]Testing business_ethics:  45%|████▌     | 45/100 [00:03<00:04, 11.43it/s]Testing business_ethics:  47%|████▋     | 47/100 [00:03<00:04, 11.78it/s]Testing business_ethics:  49%|████▉     | 49/100 [00:03<00:04, 11.47it/s]Testing business_ethics:  51%|█████     | 51/100 [00:04<00:04, 11.66it/s]Testing business_ethics:  53%|█████▎    | 53/100 [00:04<00:03, 11.76it/s]Testing business_ethics:  55%|█████▌    | 55/100 [00:04<00:04, 10.54it/s]Testing business_ethics:  57%|█████▋    | 57/100 [00:04<00:03, 11.11it/s]Testing business_ethics:  59%|█████▉    | 59/100 [00:05<00:05,  8.04it/s]Testing business_ethics:  61%|██████    | 61/100 [00:05<00:04,  8.82it/s]Testing business_ethics:  63%|██████▎   | 63/100 [00:05<00:03,  9.65it/s]Testing business_ethics:  65%|██████▌   | 65/100 [00:05<00:03, 10.75it/s]Testing business_ethics:  67%|██████▋   | 67/100 [00:05<00:02, 11.17it/s]Testing business_ethics:  69%|██████▉   | 69/100 [00:05<00:02, 10.71it/s]Testing business_ethics:  71%|███████   | 71/100 [00:06<00:02, 11.87it/s]Testing business_ethics:  73%|███████▎  | 73/100 [00:06<00:02, 11.51it/s]Testing business_ethics:  75%|███████▌  | 75/100 [00:06<00:02, 12.14it/s]Testing business_ethics:  77%|███████▋  | 77/100 [00:06<00:01, 12.02it/s]Testing business_ethics:  79%|███████▉  | 79/100 [00:06<00:01, 12.84it/s]Testing business_ethics:  81%|████████  | 81/100 [00:06<00:01, 12.29it/s]Testing business_ethics:  83%|████████▎ | 83/100 [00:07<00:01, 13.08it/s]Testing business_ethics:  85%|████████▌ | 85/100 [00:07<00:01, 13.25it/s]Testing business_ethics:  87%|████████▋ | 87/100 [00:07<00:01, 11.29it/s]Testing business_ethics:  89%|████████▉ | 89/100 [00:07<00:00, 12.07it/s]Testing business_ethics:  91%|█████████ | 91/100 [00:07<00:00, 13.42it/s]Testing business_ethics:  93%|█████████▎| 93/100 [00:07<00:00, 10.31it/s]Testing business_ethics:  95%|█████████▌| 95/100 [00:08<00:00, 11.94it/s]Testing business_ethics:  97%|█████████▋| 97/100 [00:08<00:00, 12.03it/s]Testing business_ethics:  99%|█████████▉| 99/100 [00:08<00:00, 11.08it/s]Testing business_ethics: 100%|██████████| 100/100 [00:08<00:00, 11.71it/s]
+✓ Result: 45/100 correct = 45.00%
+
+======================================================================
+EVALUATION SUMMARY
+======================================================================
+Model: meta-llama/Llama-3.2-1B-Instruct
+None (full precision)
+Total Subjects: 2
+Total Questions: 252
+Total Correct: 121
+Overall Accuracy: 48.02%
+Duration: 0.5 minutes
+======================================================================
+
+✓ Results saved to: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/llama_3.2_1b_mmlu_results_full_20260313_103301.json
+
+📊 Top 5 Subjects:
+  1. astronomy: 50.00%
+  2. business_ethics: 45.00%
+
+📉 Bottom 5 Subjects:
+  1. astronomy: 50.00%
+  2. business_ethics: 45.00%
+
+✅ Evaluation complete!

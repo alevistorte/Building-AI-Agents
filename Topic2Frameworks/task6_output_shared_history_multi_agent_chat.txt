@@ -96,7 +96,7 @@ I'm sorry, but there seems to have been some confusion. You asked "can you give 
 Enter your text (or 'quit' to exit):
 ==================================================
 
-> hey qwen could you sumarize the pipeline for me. I need it for a slides
+> hey qwen could you summarize the pipeline for me. I need it for a slides
 
 [Qwen] Processing...
 

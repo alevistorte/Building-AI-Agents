@@ -1,0 +1,14 @@
+/Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/analyze_results.py:120: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
+  ax.set_xticklabels(ax.get_xticklabels(), rotation=35, ha="right")
+Loading results...
+Loaded 3 models: ['Qwen2.5-1.5B', 'OLMo-2-1B', 'Llama-3.2-1B']
+Built answer matrices for 10 subjects
+
+Generating plots...
+Saved: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/plots/01_accuracy_by_subject.png
+Saved: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/plots/02_per_question_heatmaps.png
+Saved: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/plots/03_mistake_overlap.png
+Saved: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/plots/04_pairwise_correlation.png
+Saved: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/plots/05_rolling_accuracy.png
+
+✅ All plots saved to: /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Week01-RunningLLM/results/plots

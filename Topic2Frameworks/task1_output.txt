@@ -1,0 +1,119 @@
+==================================================
+LangGraph Simple Agent with Llama-3.2-1B-Instruct
+==================================================
+
+Using MPS (Apple Silicon) for inference
+Loading model: meta-llama/Llama-3.2-1B-Instruct
+This may take a moment on first run as the model is downloaded...
+Device set to use mps:0
+Model loaded successfully!
+
+Creating LangGraph...
+Graph created successfully!
+
+Saving graph visualization...
+Graph image saved to /Users/alevistorte/Documents/00Projects/Building-AI-Agents/Topic2Frameworks/lg_graph.png
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> Hello
+
+Processing your input...
+
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+User: Hello
+Assistant: Hello! How can I help you today? Is there something specific you'd like to ask or discuss?
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> verbose
+[TRACE] Verbose mode enabled.
+[TRACE] Entering node: get_user_input | verbose=True
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> I am just looking for info about AI agents
+[TRACE] get_user_input received: 'I am just looking for info about AI agents'
+[TRACE] get_user_input routing to call_llm
+[TRACE] Entering node: call_llm | verbose=True
+[TRACE] call_llm sending prompt: 'User: I am just looking for info about AI agents\nAssistant:'
+
+Processing your input...
+[TRACE] call_llm received response (1363 chars)
+[TRACE] Entering node: print_response | verbose=True
+
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+User: I am just looking for info about AI agents
+Assistant: I'd be happy to provide you with information about AI agents. Here's a brief overview:
+
+**What is an AI Agent?**
+
+An AI agent is a software program or a system that acts autonomously, making decisions and taking actions based on its own internal state and goals. It is a type of intelligent agent that can be used in various applications, including robotics, autonomous vehicles, and social robots.
+
+**Types of AI Agents**
+
+There are several types of AI agents, including:
+
+1. **Planning Agents**: These agents use planning algorithms to generate a sequence of actions to achieve a specific goal.
+2. **Learning Agents**: These agents learn from experience and adapt to new situations through machine learning.
+3. **Exploration-Exploitation Agents**: These agents balance exploration (trying new actions) and exploitation (choosing actions that are likely to lead to a good outcome).
+4. **Goal-Oriented Agents**: These agents have a specific goal in mind and try to achieve it through various actions.
+5. **Social Agents**: These agents interact with other agents and humans, and their behavior is influenced by social norms and relationships.
+
+**Key Characteristics**
+
+AI agents have several key characteristics, including:
+
+1. **Autonomy**: The ability to act independently without human intervention.
+
+[TRACE] print_response complete, routing back to get_user_input
+[TRACE] Entering node: get_user_input | verbose=True
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> quiet
+[TRACE] get_user_input received: 'quiet'
+Verbose mode disabled.
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+More about planning agents
+
+Processing your input...
+
+--------------------------------------------------
+LLM Response:
+--------------------------------------------------
+User: More about planning agents
+Assistant: I'm here to help with planning agents. Planning agents, also known as real estate agents, play a crucial role in facilitating the buying and selling of properties. Here are some key aspects of planning agents:
+
+1. **Property Search**: Planning agents assist clients in finding their dream property by exploring different neighborhoods, types of properties, and amenities.
+2. **Property Analysis**: Once a property is selected, planning agents help clients analyze the property's condition, features, and potential for renovation or resale.
+3. **Financial Planning**: Planning agents provide clients with financial guidance, helping them determine their budget, income, and expenses to make an informed decision about purchasing a property.
+4. **Contract Preparation**: Planning agents assist clients in preparing and signing property contracts, ensuring all necessary documents and terms are included.
+5. **Inspections and Due Diligence**: Planning agents conduct inspections to identify potential issues with the property, and help clients conduct due diligence, such as reviewing property taxes and insurance.
+6. **Marketing and Advertising**: Planning agents market and advertise properties to potential buyers, using various strategies such as online listings, open houses, and social media.
+7. **Closing and Transfer**: Planning agents facilitate the closing and transfer process, ensuring all transactions are completed smoothly and efficiently.
+
+I'd
+
+==================================================
+Enter your text (or 'quit' to exit):
+==================================================
+
+> exit
+Goodbye!
