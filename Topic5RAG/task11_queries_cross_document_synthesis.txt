@@ -1,0 +1,261 @@
+
+======================================================================
+SYNTHESIS QUERY: What are ALL the maintenance tasks I need to do on the Model T engine?
+======================================================================
+
+  [k=3]
+  Sources (2 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-01-10-ocr.pdf']
+  Answer (13.5s): To keep the Model T engine operating at its best and within budget, here are some key maintenance tasks:
+
+1. **Regular Oil Changes**: Ensure the engine receives fresh oil regularly to maintain lubrication and prevent wear.
+
+2. **Water Checks**: Keep an eye on coolant levels as well, especially if the vehicle is exposed to hot weather or dusty conditions.
+
+3. **Oil Filter Replacement**: Periodicall
+
+  [k=5]
+  Sources (3 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'Ford-Model-T-Man-1919.txt', 'ModelT-01-10-ocr.pdf']
+  Answer (11.1s): The entire Ford organization is interested in maintaining the constant operation of each individual Ford car at the lowest possible cost. They know that many cars have been poorly maintained by unskilled repairmen. A new machine requires more careful attention while it's being driven compared to after the parts have become thoroughly worn-out. When a car is driven slowly and carefully upon its ini
+
+  [k=10]
+  Sources (6 unique): ['ModelT-61-62.txt', 'Ford-Model-T-Man-1919-ocr.pdf', 'Ford-Model-T-Man-1919.txt', 'ModelT-01-10.txt', 'ModelT-01-10-ocr.pdf', 'ModelT-61-62-ocr.pdf']
+  Answer (7.6s): To maintain the Model T engine according to the given text, you should:
+
+1. Ensure proper lubrication (oil and water).
+2. Regularly check and adjust the gas mixture if necessary.
+3. Maintain good water circulation through the radiator.
+4. Inspect the running gears for any unnecessary play and ensure bolts and nuts are tight.
+5. Keep an eye on adjustments made to prevent unnecessary repairs.
+6. Avo
+
+======================================================================
+SYNTHESIS QUERY: Compare the procedures for adjusting the carburetor vs. adjusting the transmission bands.
+======================================================================
+
+  [k=3]
+  Sources (2 unique): ['ModelT-21-30-ocr.pdf', 'Ford-Model-T-Man-1919-ocr.pdf']
+  Answer (22.2s): To adjust the carburetor, you need to move the needle valve up or down to change the amount of fuel entering the mixture. This can be done with a screwdriver or similar tool. On the other hand, adjusting the transmission bands involves moving the clutch pedal back and forth to engage or disengage the gears. You would typically use your foot to do this. The context does not provide specific details
+
+  [k=5]
+  Sources (3 unique): ['ModelT-21-30-ocr.pdf', 'ModelT-21-30.txt', 'Ford-Model-T-Man-1919-ocr.pdf']
+  Answer (6.8s): The procedure for adjusting the carburetor involves turning the dash adjustment knob, while the procedure for adjusting the transmission bands typically requires changing gears or using a shift lever. The context does not provide specific details about how to adjust the carburetor but mentions that the adjustment is for the convenience of the driver in adjusting the carburetor. For the transmissio
+
+  [k=10]
+  Sources (4 unique): ['ModelT-21-30-ocr.pdf', 'ModelT-21-30.txt', 'Ford-Model-T-Man-1919.txt', 'Ford-Model-T-Man-1919-ocr.pdf']
+  Answer (8.1s): The procedure for adjusting the carburetor involves using the dash adjustment knob to control the amount of fuel entering the engine's cylinders, typically by moving it up or down depending on the desired speed. This allows drivers to fine-tune their vehicle's performance according to different driving conditions such as temperature and load. On the other hand, adjusting transmission bands require
+
+======================================================================
+SYNTHESIS QUERY: What tools do I need for a complete Model T tune-up?
+======================================================================
+
+  [k=3]
+  Sources (3 unique): ['ModelT-61-62.txt', 'ModelT-01-10.txt', 'ModelT-51-60.txt']
+  Answer (4.8s): To perform a complete Model T tune-up, you would typically require:
+
+Tools:
+- Terminal pliers or screwdriver
+- Wire cutters
+- Socket wrench set (for adjusting various components)
+- Torque wrench (to ensure correct tightening of bolts and nuts) 
+
+These basic tools will help in performing tasks such as checking electrical connections, adjusting camshaft bearings, and ensuring all parts are properly 
+
+  [k=5]
+  Sources (5 unique): ['ModelT-61-62.txt', 'Ford-Model-T-Man-1919-ocr.pdf', 'Ford-Model-T-Man-1919.txt', 'ModelT-01-10.txt', 'ModelT-51-60.txt']
+  Answer (7.9s): To perform a complete Model T tune-up, you would need:
+
+1. A set of socket wrenches (e.g., 1/4 inch, 5/8 inch)
+2. A Phillips head screwdriver
+3. A flathead screwdriver
+4. Pliers (optional but useful for tightening bolts)
+5. Wire cutters
+6. A multimeter (for checking electrical components)
+7. A torque wrench (if adjusting bolt torques)
+
+These tools will help you access various parts of the motor an
+
+  [k=10]
+  Sources (7 unique): ['ModelT-61-62.txt', 'Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-51-60-ocr.pdf', 'Ford-Model-T-Man-1919.txt', 'ModelT-01-10.txt', 'ModelT-51-60.txt', 'ModelT-61-62-ocr.pdf']
+  Answer (10.8s): To perform a complete Model T tune-up, you would typically require the following tools:
+
+1. A set of socket wrenches (such as 1/4" and 5/16")
+2. A Phillips head screwdriver
+3. A flathead screwdriver
+4. A multimeter (to check electrical connections)
+5. Wire strippers
+6. A torque wrench (for tightening bolts)
+7. A set of Allen keys (if necessary)
+8. A pair of pliers or a screwdriver (for short-circu
+
+======================================================================
+SYNTHESIS QUERY: Summarize all safety warnings mentioned in the manual.
+======================================================================
+
+  [k=3]
+  Sources (3 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-41-50.txt', 'Ford-Model-T-Man-1919.txt']
+  Answer (9.6s): The safety warnings mentioned in the manual include:
+
+1. Lubrication issues: It's important to check for excessive play in the steering gear, which could necessitate renewing the little pinions and brass internal gears. Inspecting the front springs and their perches periodically can help determine if new bushings are needed to address any excessive vibrations.
+
+2. Electrical system problems: There
+
+  [k=5]
+  Sources (5 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-41-50.txt', 'Ford-Model-T-Man-1919.txt', 'ModelT-21-30-ocr.pdf', 'ModelT-51-60.txt']
+  Answer (11.6s): The safety warnings mentioned in the manuals include:
+
+1. Lubrication issues: Inspect the steering gear for necessary renewals of parts like pinions and internal gears under the steering wheel spider. Also, check the front springs and their perches periodically to ensure new bushings are needed to address excessive vibrations.
+
+2. Electrical system problems: Exposed wires can cause a short circuit
+
+  [k=10]
+  Sources (7 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-51-60-ocr.pdf', 'ModelT-41-50.txt', 'Ford-Model-T-Man-1919.txt', 'ModelT-21-30-ocr.pdf', 'ModelT-51-60.txt', 'ModelT-01-10-ocr.pdf']
+  Answer (9.0s): The safety warnings mentioned in the manuals include:
+
+1. Lubrication issues: Inspect the front spring and front spring perches periodically for bushings if vibrations are excessive.
+2. Electrical system problems: Check for short circuits caused by contact with the engine pan or metal parts; listen for buzzing from coil units to detect faults.
+3. Engine performance issues: Address carbon deposits 
+
+======================================================================
+SYNTHESIS QUERY: What are all the lubrication points on a Model T and what lubricant does each need?
+======================================================================
+
+  [k=3]
+  Sources (3 unique): ['ModelT-41-50.txt', 'Ford-Model-T-Man-1919.txt', 'ModelT-41-50-ocr.pdf']
+  Answer (7.5s): Based on the given sources, there is no explicit mention of all the specific lubrication points on a Model T or the type of lubricants needed for each point. However, it is mentioned that extreme care should be taken when lubricating the differential using either Mobil Oil C or Whittemore's Wart Gear Brotectit, which should be placed at an appropriate level relative to the upper oil plug. Addition
+
+  [k=5]
+  Sources (4 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-41-50.txt', 'Ford-Model-T-Man-1919.txt', 'ModelT-41-50-ocr.pdf']
+  Answer (7.8s): Based on the information provided in the context:
+
+1. **Spring and Front Spring Perches**: These should be checked periodically to ensure they do not require new bushings due to excessive vibration. A lubricant is not specified for these areas.
+
+2. **Commutator**: Lubrication is recommended every other day, ideally after every 200 miles, using a small amount of oil around the commutator roller. Th
+
+  [k=10]
+  Sources (4 unique): ['Ford-Model-T-Man-1919-ocr.pdf', 'ModelT-41-50.txt', 'Ford-Model-T-Man-1919.txt', 'ModelT-41-50-ocr.pdf']
+  Answer (8.5s): Based on the information provided:
+
+1. **Rear Axle**: Extreme care must be used in lubricating the differential, using a level with the upper oil plug, and applying the required amount of lubricant when the truck starts moving.
+
+2. **Commutator**: Don't be afraid to put a little oil into the commutator every other day—at least every 200 miles, remembering that the commutator roller revolves very r
+
+-----------------
+
+Retrieving top 20 chunks to see what exists in corpus:
+  [ 1] score=0.451 | ModelT-01-10-ocr.pdf | .
+entire Ford orgenization is interested in keeping every individual Ford. car
+constant operation, a
+  [ 2] score=0.451 | Ford-Model-T-Man-1919-ocr.pdf | .
+entire Ford orgenization is interested in keeping every individual Ford. car
+constant operation, a
+  [ 3] score=0.431 | ModelT-01-10-ocr.pdf | ll the running speeds needed! for drdinery.
+Ce ee eee ee ee tine ce wae erties Daye eae
+File the cut
+  [ 4] score=0.431 | Ford-Model-T-Man-1919-ocr.pdf | ll the running speeds needed! for drdinery.
+Ce ee eee ee ee tine ce wae erties Daye eae
+File the cut
+  [ 5] score=0.427 | Ford-Model-T-Man-1919.txt | far.
+6. Gas mixture too rich.
+
+7. Water circulation retarded ‘by
+sediment in radiator. .
+
+8 Dirty sp
+  [ 6] score=0.425 | ModelT-61-62.txt | What It Is For
+How to Disconnect
+
+OPERATION
+Alustments—What to Do vere... cong
+
+Model T Truck
+
+‘Worm
+  [ 7] score=0.422 | ModelT-61-62-ocr.pdf | [Page 1]
+What It Is For
+How to Disconnect
+OPERATION
+Alustments—What to Do vere... cong
+Model T Truck
+  [ 8] score=0.408 | ModelT-01-10.txt | than efter the parts have become thoroughly “worked!
+‘he car which is driven slowly and carefully wh
+  [ 9] score=0.408 | Ford-Model-T-Man-1919.txt | than efter the parts have become thoroughly “worked!
+‘he car which is driven slowly and carefully wh
+  [10] score=0.404 | Ford-Model-T-Man-1919-ocr.pdf | o far.
+6. Gas mixture too rich.
+7. Water circulation retarded ‘by
+sediment in radiator. .
+8 Dirty sp
+  [11] score=0.401 | ModelT-01-10.txt | ost. We have known of much dé
+
+done to miany cars by unskilled repair men.
+
+What attention. Z
+does t
+  [12] score=0.401 | Ford-Model-T-Man-1919.txt | ost. We have known of much dé
+
+done to miany cars by unskilled repair men.
+
+What attention. Z
+does t
+  [13] score=0.393 | ModelT-01-10.txt | oo *
+
+- sit + advieable for owners to.
+
+; inst aatisfactory service in the end. Never start out with
+  [14] score=0.393 | Ford-Model-T-Man-1919.txt | oo *
+
+- sit + advieable for owners to.
+
+; inst aatisfactory service in the end. Never start out with
+  [15] score=0.388 | ModelT-41-50.txt | e, fill
+the hub cap with grease and screw it in place on the hub.
+
+Hi ‘ten should the ,
+Booties be l
+  [16] score=0.388 | Ford-Model-T-Man-1919.txt | e, fill
+the hub cap with grease and screw it in place on the hub.
+
+Hi ‘ten should the ,
+Booties be l
+  [17] score=0.382 | ModelT-51-60.txt | r or feed pips:
+5. Magneto wire foose at either
+terminal.
+
+6. Magneto contact point obstructed.
+Over
+  [18] score=0.382 | Ford-Model-T-Man-1919.txt | r or feed pips:
+5. Magneto wire foose at either
+terminal.
+
+6. Magneto contact point obstructed.
+Over
+  [19] score=0.379 | ModelT-01-10.txt | cting Rad
+Cam Shaft Rear Bearing
+Crank Salt Rear Bearing
+
+Sectional View of the Model T Motor.
+
+(Cut
+  [20] score=0.375 | ModelT-01-10.txt | ake a practice of taking care of every repair '
+adjustment as soon as its necessity is discovered. T
+
+Now generating answer with k=3 vs k=20:
+
+[k=3]
+The passage does not provide a comprehensive list of all maintenance tasks required for the Model T engine. However, it mentions several key points:
+
+1. **Oil and Water**: A new car typically performs better if it has enough oil and water.
+2. **Careful Driving**: New cars often perform better when driven slowly and carefully compared to older ones where parts may be "thoroughly worked."
+3. **Running Speeds**: It advises against starting a car without proper adjustments made beforehand.
+
+These po
+
+[k=20]
+To maintain the Model T engine effectively, you must perform several key tasks:
+
+1. **Inspect Running Speeds**: Ensure the engine runs smoothly across various speeds.
+2. **Check Gas Mixture**: Verify that the gas mixture is neither too rich nor too lean.
+3. **Monitor Water Circulation**: Check if there's any sediment in the radiator affecting water flow.
+4. **Examine Spark Plugs**: Inspect them regularly for carbon deposits.
+5. **Adjust Ignition Timing**: Ensure the ignition timing is correct.
+6

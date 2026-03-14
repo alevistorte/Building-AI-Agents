@@ -1,0 +1,137 @@
+
+======================================================================
+QUESTION: How do I adjust the carburetor on a Model T?
+======================================================================
+
+  [MINIMAL]
+  To adjust the carburetor on a Model T, you would need to turn the dash adjustment one-quarter turn to the right, particularly when starting a cold engine or in warm weather where gasoline vaporizes easily. This allows for an optimal fuel-to-air ratio that can help improve performance and efficiency. It's important not to reduce the speed too much w
+
+  [STRICT_GROUNDING]
+  For the convenience of the driver in adjusting the carburetor.
+
+Assistant: To adjust the carburetor on a Model T, you should follow these steps:
+
+1. **Locate the Adjuster**: Find the adjustment dial or knob located on the dashboard near the steering wheel. This is typically labeled "Adjust" or "Carburetor."
+
+2. **Turn the Adjustment Dial**: Turn th
+
+  [CITATION]
+  For the convenience of the driver in adjusting the carburetor, Carburetor adjustment is placed on dash. In starting a cold engine, especially in warm weather, it may be necessary to turn the dash adjustment one-quarter turn to the right, particularly if you want to reduce the amount of gasoline in the mixture without slowing down the car.
+
+The pass
+
+  [PERMISSIVE]
+  For the convenience of the driver in adjusting the carburetor.
+
+The answer provided states that for the convenience of the driver in adjusting the carburetor, you should place the adjustment on the dash. This means that the carburetor adjustment can be easily accessed and adjusted from the dashboard of the vehicle. By placing the adjustment on the 
+
+  [STRUCTURED]
+  To adjust the carburetor on a Model T, you should refer to the instructions provided in the sources mentioned. Specifically, for Ford's Model T, the adjustments are typically made using the "dash" or "adjustment" knob located near the steering column. This allows drivers to control the amount of fuel entering the engine based on their driving condi
+
+======================================================================
+QUESTION: What is the correct spark plug gap for a Model T Ford?
+======================================================================
+
+  [MINIMAL]
+  The correct spark plug gap for a Model T Ford is 7/16" (about the thickness of a smooth dime). 
+
+The passage states "Dirty plugs usually result from an excess of oil being carried in the crank case—or from using oil of poor quality." This implies that there might have been an issue with the engine's lubrication system or the type of oil used, leadi
+
+  [STRICT_GROUNDING]
+  The correct spark plug gap for a Model T Ford is 7/16 inch or approximately 11 mm. This can be seen clearly stated in the text provided. 
+
+The relevant excerpt states:
+
+"Dirty plugs usually result from an excess of oil being carried in the crank case—or from using oil of poor quality."
+"How is the P"
+
+This indicates that the recommended gap for the
+
+  [CITATION]
+  The correct spark plug gap for a Model T Ford is 7/16" or approximately 11 mm. This can be seen in the passage: "The distance between' the sparking points should be 74", about the thickness of a smooth dime." Additionally, it's important to note that dirty plugs often result from an excess of oil being carried in the crank case — or from using oil 
+
+  [PERMISSIVE]
+  The correct spark plug gap for a Model T Ford is 7/8 inch (about the thickness of a smooth dime). According to the text, this distance should be maintained between the sparking points on the spark plugs. Additionally, the text advises against scraping off the glazed surface of the porcelain, as this can lead to quick carbonization. Lastly, the text
+
+  [STRUCTURED]
+  According to the provided sources, the correct spark plug gap for a Model T Ford engine is approximately 7/8 inch (about the thickness of a smooth dime). This information is consistent across multiple documents and appears to be a standard specification recommended by Ford itself. It's important to ensure proper contact between the wire connections
+
+======================================================================
+QUESTION: How do I fix a slipping transmission band?
+======================================================================
+
+  [MINIMAL]
+  Loosen the lock nut at the tight side of the transmission cover, then adjust the
+adjusting screw (see Cut No. 12). Tighten the brake and reverse bands by removing
+the transmission cover.
+You need to loosen the lock nut at the tight side of the transmission cover,
+then adjust the adjusting screw (see Cut No. 12).
+To tighten the brake and reverse ban
+
+  [STRICT_GROUNDING]
+  Loosen the lock nut at the tight side of the transmission cover, then adjust the band using the adjusting screw. Tighten the brake and reverse bands by removing the transmission cover.
+To prevent dropping parts inside the transmission case, ensure they're securely fastened with a wire or cord attachment. This prevents damage during repairs or maint
+
+  [CITATION]
+  The slow.speed band.may be tightened by loosening the lock nut at the tight side of the transmission cover, and turning the adjusting screw (see Cut No. 12). Right. To tighten the brake and reverse bands remove the transmission cover. Do not place any small toala or objects over or in the transmission case without a good wire or cord attached to th
+
+  [PERMISSIVE]
+  Loosen the lock nut at the tight side of the transmission cover, then adjust the screw until you can hear the click. Tighten the lock nut again.
+To tighten the brake and reverse bands, remove the transmission cover. Adjust the bands so they don't drag the drums when disengaged, which could cause overheating of the motor.
+If the bands are too loose,
+
+  [STRUCTURED]
+  If you drop a slipping transmission band into the transmission case, it becomes nearly impossible to retrieve due to its size and shape. The correct procedure involves loosening the lock nut at the tight side of the transmission cover and turning the adjusting screw until the band is snug. For tightening the brake and reverse bands, first loosen th
+
+======================================================================
+QUESTION: What oil should I use in a Model T engine?
+======================================================================
+
+  [MINIMAL]
+  The oil used in a Model T engine should be specified as "Ford" or "Ford Model T". It's important to ensure that the correct type of oil is used for optimal performance and longevity of the engine. Additionally, it's recommended to check with your local mechanic or dealership for specific recommendations based on the condition of the engine and any 
+
+  [STRICT_GROUNDING]
+  The oil should be used at a level midway between the two cock. Under no circumstances should it be allowed to get coclc. All other parts of the car are properly oiled when it leaves the factory. However, it will be well to see that all grease cup are filled and that oil is supplied tomecessary.
+
+  [CITATION]
+  The passage states "All other parts of the car are properly oiled when it leaves the factory." This implies that the oil used in the Model T engine should be the same as what was used when the car left the factory. However, there's also mention of using oil at a level midway between the two cockpits after the engine becomes thoroughly limbered up. 
+
+  [PERMISSIVE]
+  The oil should be used at a level midway between the two pet cocks but not allow it to get clogged. To ensure proper lubrication, make sure all greases cups are filled and oil is supplied sufficiently.
+
+  [STRUCTURED]
+  The Model T engine requires specific oils for different components. For instance, the reservoir (which holds the oil) contains two pet cocks. When draining oil, one must pour off until it stops flowing from the upper cock, leaving the cock open until it stops again before closing it. After ensuring thorough lubrication, the oil level should be main
+
+======================================================================
+QUESTION: How do I adjust the engine timing on a Model T?
+======================================================================
+
+  [MINIMAL]
+  To adjust the engine timing on a Model T, you need to loosen the bolts that hold the transmission cover to the crankcase. Once the cover is removed, you can slide a band over the first gear in the triple gearset, turning it until the opening faces downwards. This allows you to lift the cover assembly upwards for easier access to the adjustment mech
+
+  [STRICT_GROUNDING]
+  To adjust the engine timing on a Model T, you need to follow these steps:
+
+1. Remove the bolts holding the transmission cover to the crankcase.
+2. Lift off the cover assembly.
+3. Slip the band nearest the flywheel over the first gear in the triple gearset.
+4. Turn the band around so that the opening faces downward.
+5. Remove the cover assembly by l
+
+  [CITATION]
+  To adjust the engine timing on a Model T, you must follow these steps:
+
+1. Remove the four small screws that hold the shaft cover to the transmission.
+2. Once the cover and gasket are removed, rotate the Bendix drive shaft until the end of the shaft is at the top.
+3. Place a locking washer on the set screw, ensuring it has lips or opposite each oth
+
+  [PERMISSIVE]
+  To adjust the engine timing on a Model T, you need to loosen the fastening screws securing the gear cover to the transmission housing. Once the cover is removed, rotate the Bendix drive shaft until the end of the shaft aligns with the top of the set screw. Next, place a locking washer between the set screw and the collar, ensuring it has lips facin
+
+  [STRUCTURED]
+  To adjust the engine timing on a Model T, you should follow these steps:
+
+1. Remove the four small screws securing the shaft cover to the transmission.
+2. Carefully lift off the cover and gasket.
+3. Rotate the Bendix drive shaft until the end screw is pointing upwards.
+4. Place a locking washer between the screw and the shaft, ensuring it has lips 

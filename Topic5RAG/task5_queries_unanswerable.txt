@@ -1,0 +1,78 @@
+
+======================================================================
+CATEGORY: OFF-TOPIC
+======================================================================
+
+  Q: What is the capital of France?
+  A: Paris is the capital of France. This can be inferred from the passage where it mentions "France" and provides details about its automobile model T production. The text does not directly state the capital but implies it through the mention of French automobiles. 
+
+Relevant Passage: 
+"The different speeds required to meet road conditions are obtained by opening or closing the throttle. Practically a
+  Assessment: ?
+
+  Q: How many moons does Jupiter have?
+  A: Jupiter has six moons. According to the passage, "The planetary transmission is Sit cnt mot dec meu of psd contra a dae advantage the car," where "psd contra a dae" refers to the advantages of the planetary transmission system. This implies that there are multiple components or features within this system, but no specific number of moons for Jupiter is mentioned directly. However, the question ask
+  Assessment: ?
+
+  Q: What is the boiling point of water?
+  A: The boiling point of water is nearly to the boiling point. To find the cause of persistent overheating, one should first determine the percentage of alcohol used in the coolant mixture and then adjust it accordingly to ensure proper cooling efficiency without causing overheating. The given sources provide detailed information about the effects of varying alcohol concentrations on engine performanc
+  Assessment: ?
+
+======================================================================
+CATEGORY: RELATED-BUT-MISSING
+======================================================================
+
+  Q: What is the horsepower of a 1925 Model T?
+  A: Based on the given sources, there is no specific mention or calculation of the horsepower for a 1925 Model T. The context focuses on technical details related to the engine's construction and components but does not provide data on its power output. To determine the horsepower of a 1925 Model T, one would need additional information such as the displacement of the engine or an official specificati
+  Assessment: ?
+
+  Q: What transmission fluid capacity does the Model T require?
+  A: The context does not provide specific details about the Model T's transmission fluid capacity. It only mentions that there is a "reversed" mechanism for changing speeds within the transmission system. To determine the exact fluid capacity required, one would need to refer to more detailed technical specifications or manuals specifically designed for the Model T model being discussed. Based solely 
+  Assessment: ?
+
+  Q: How do I replace the Model T's catalytic converter?
+  A: The given text does not provide instructions for replacing a catalytic converter on a Model T car. It only describes how to clean the engine components before installing a new cylinder head gasket. There is no mention of catalytic converters or their replacement process. Therefore, the correct response is:
+
+The context does not contain instructions for replacing a catalytic converter on a Model T 
+  Assessment: ?
+
+======================================================================
+CATEGORY: FALSE-PREMISE
+======================================================================
+
+  Q: Why does the manual recommend synthetic oil for the Model T engine?
+  A: The manual recommends synthetic oil for the Model T engine because it states "Oil should be changed frequently, especially if you use gasolene, as it will deteriorate quickly." This indicates that synthetic oil is preferred due to its better resistance to degradation under harsh conditions such as those experienced by an early Model T vehicle. Additionally, the text mentions that "it is advisable 
+  Assessment: ?
+
+  Q: Where in the manual does it describe the fuel injection system?
+  A: The description of the fuel injection system can be found in the Ford-Model-T-Man-1919-ocr.pdf document, specifically on Page 20. This page includes a diagram illustrating the principle of Ford Carburetion, which shows the installation process for a new carburetor. However, there is no explicit mention of a fuel injection system in this source. To find detailed descriptions of fuel injection syste
+  Assessment: ?
+
+  Q: What does the manual say about the Model T's electronic ignition?
+  A: The manual states that the Model T engine requires an external ignition system rather than an electronic one. It mentions that current from either the battery or magneto can be used for ignition, but recommends using the magneto "at all times" for better results. The text also advises paying special attention to the position of the spark lever to avoid causing backfiring, which could lead to damag
+  Assessment: ?
+
+
+=== STANDARD PROMPT ===
+
+Q: What is the capital of France?
+A: Paris The capital of France is Paris. This can be inferred from the passage which mentions "France" without specifying any other country's capital. However, it also notes that Paris is the capital of France, as stated directly in the text. 
+
+Relevant Passage: [Source: ModelT-01-10-ocr.pdf, Score: 0.
+
+Q: What is the horsepower of a 1925 Model T?
+A: Based on the information provided in the context, there is no mention of the horsepower of a 1925 Model T. The text only discusses the components of the Model T motor but does not provide specific details about its power output for any particular year or model. Therefore, it's impossible to determin
+
+Q: Why does the manual recommend synthetic oil for Model T?
+A: The manual recommends synthetic oil for Model T because it states that "An 4-1 heavy semifinid cil, such as Mobiloil C or Whittemore’s Wort Gear Brotectit" should be used, indicating preference for high-quality oils over conventional types like Mobil Oil C or Whittemore's Wort Gear Brotectit. This s
+
+=== STRICT 'I CANNOT ANSWER' PROMPT ===
+
+Q: What is the capital of France?
+A: I cannot answer this from the available documents.
+
+Q: What is the horsepower of a 1925 Model T?
+A: I cannot answer this from the available documents.
+
+Q: Why does the manual recommend synthetic oil for Model T?
+A: I cannot answer this from the available documents.

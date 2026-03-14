@@ -1,0 +1,153 @@
+Running ALL queries with local Qwen 2.5 1.5B + RAG
+Paste these same questions into GPT-4/Claude web chat (no files) and record answers.
+======================================================================
+
+QUESTION: How do I adjust the carburetor on a Model T?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: The instructions for adjusting the carburetor on a Model T include:
+
+1. Inserting an end of a rod through the throttle lever "B".
+2. Locking this rod in place by inserting a cotter pin through its end.
+3. Installing a carburetor adjusting rod by inserting its head through a slot in the dash.
+4. Placing the forked end of the rod "C" through the head of the carburetor needle valve.
+5. Locking the rod in position by inserting a cotter key through its end. 
+
+These steps involve securing various components related to the carburetor adjustment mechanism. The process described appears to be part of the overall procedure for maintaining or repairing the carburetor system on a Model T vehicle. However, specific details about how adjustments are made might require additional documentation or technical guidance beyond what's provided here.
+  (latency: 8.0s)
+[GPT-4o Mini]: Adjusting the carburetor on a Ford Model T involves a few steps to ensure proper fuel-air mixture and engine performance. The Model T typically uses a simple carburetor design, often the Holley or the Kingston. Here’s a general guide to help you adjust the carburetor:
+
+### Tools Needed:
+- Screwdriver
+- Wrench (if necessary for adjustments)
+- Clean cloth
+
+### Steps to Adjust the Carburetor:
+
+1. **Warm Up the Engine:**
+   - Start the engine and let it warm up to operating temperature. This ensures that the adjustments are made under normal running conditions.
+
+2. **Locate the Adjustments:**
+   - Identify the main adjustment screws on the carburetor. Typically, there are two main screws: one for the idle speed and one for the mixture.
+
+3. **Adjust the Idle Speed:**
+   - Locate the idle speed screw (usually on the side of the carburetor). 
+   - Turn the screw clockwise to increase the idle speed and counterclockwise to decrease it. 
+   - Adjust until the engine runs smoothly at a low RPM without stalling.
+
+4. **Adjust the Mixture:**
+   - Locate the mixture adjustment screw (often found on the bottom or side of the carburetor).
+   - Start with the screw turned in (clockwise) until it lightly seats, then back it out about 1.5 to 2 turns as a starting point.
+   - With the engine running, slowly turn the mixture screw in (clockwise) until the engine begins to run rough, then back it out (counterclockwise) until it runs smoothly again. 
+
+5. **Fine-Tuning:**
+   - After adjusting the mixture, you may need to go back and adjust the idle speed again to ensure the engine runs smoothly.
+   - Repeat the process of adjusting the mixture and idle speed until you achieve the desired performance.
+
+6. **Check for Leaks:**
+   - Inspect the carburetor and surrounding areas for any fuel leaks after adjustments. Tighten any loose connections if necessary.
+
+7. **Test Drive:**
+   - Take the Model T for a short drive to see how it performs under load. Make further adjustments if necessary.
+
+### Additional Tips:
+- Always make small adjustments and take note of how the engine responds.
+- If you are unsure about any step or if the engine continues to run poorly, consult a professional or refer to a Model T repair manual for more detailed instructions.
+- Regular maintenance of the carburetor
+
+QUESTION: What is the correct spark plug gap for a Model T Ford?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: The correct spark plug gap for a Model T Ford is 0.74 inches, approximately equal to the thickness of a smooth dime. This measurement ensures proper electrical contact between the spark plug and the engine's components. According to the text, "All wire connections to spark plugs, coil box and commutator should, of course, at all times be kept in perfect contact." Additionally, the instruction mentions that shims are available in various thicknesses to achieve extremely close adjustments in setting the gap. Therefore, the recommended gap size aligns with the standard specifications for Model T Ford engines.
+  (latency: 5.9s)
+[GPT-4o Mini]: The correct spark plug gap for a Model T Ford is typically around 0.025 inches (0.635 mm). However, it's always a good idea to check the specific recommendations for your particular engine, as variations can occur based on the year and any modifications that may have been made.
+
+QUESTION: How do I fix a slipping transmission band?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: To fix a slipping transmission band, you should first ensure that the bands have been properly adjusted. This can typically be done by loosening the lock nut at the tight side of the transmission cover and turning the adjusting screw as described in the instructions. Once the adjustment is made, you may need to loosen the transmission cover to access the bands for further adjustments or repairs. It's important to use a good wire or cord to secure any loose parts inside the transmission case to prevent them from falling inside and making recovery difficult. The text also mentions tightening the brake and reverse bands by removing the transmission cover, but this step is not necessary for fixing a slipping transmission band itself. Remember to always follow safety guidelines when working with transmissions, especially when dealing with potentially dangerous components like the transmission cover. The specific steps mentioned here are general guidelines and might vary slightly depending on the exact model and manufacturer of the vehicle. Always refer to the owner's manual or consult a professional mechanic if unsure about any part of the process. 
+
+This answer is derived directly from the provided context, focusing on how to adjust and possibly repair a slipping transmission band. It includes references to specific steps such as loosening the lock nut, turning an adjusting screw, and securing loose items within the transmission case. While it does not provide all possible solutions, it offers a comprehensive approach to addressing a slipping transmission band issue according to the given information.
+  (latency: 12.9s)
+[GPT-4o Mini]: Fixing a slipping transmission band can be a complex task, often requiring mechanical expertise and specialized tools. Here are some general steps you can follow, but keep in mind that if you're not comfortable with automotive repairs, it's best to consult a professional mechanic.
+
+### Steps to Fix a Slipping Transmission Band:
+
+1. **Diagnose the Problem:**
+   - Confirm that the issue is indeed a slipping transmission band. Symptoms may include slipping gears, delayed engagement, or unusual noises.
+   - Check for any transmission fluid leaks or low fluid levels, as these can also cause slipping.
+
+2. **Check Transmission Fluid:**
+   - Ensure that the transmission fluid is at the correct level and in good condition. If it's low, top it off with the appropriate fluid. If it's dirty or burnt, consider a fluid change.
+
+3. **Adjust the Bands:**
+   - Some automatic transmissions have adjustable bands. Locate the band adjustment screws (usually found on the transmission case) and adjust them according to the manufacturer's specifications.
+   - This typically involves loosening the lock nut and turning the adjustment screw to the specified torque, then re-tightening the lock nut.
+
+4. **Inspect the Transmission:**
+   - If adjusting the bands doesn’t resolve the issue, you may need to remove the transmission pan to inspect the bands and other internal components.
+   - Look for signs of wear, damage, or misalignment.
+
+5. **Replace Worn Bands:**
+   - If the bands are worn or damaged, they will need to be replaced. This often requires disassembling the transmission, which can be a complicated process.
+   - Follow a repair manual specific to your vehicle for detailed instructions on disassembly and reassembly.
+
+6. **Check Other Components:**
+   - While you have the transmission apart, check other components such as clutches, seals, and the valve body for wear or damage.
+
+7. **Reassemble and Test:**
+   - Once repairs or replacements are made, reassemble the transmission, ensuring all components are properly aligned and secured.
+   - Refill the transmission with the correct fluid and check for leaks.
+   - Test drive the vehicle to ensure the slipping issue is resolved.
+
+### Important Considerations:
+- **Safety First:** Always take safety precautions when working on vehicles. Use jack stands and wear appropriate safety gear.
+- **Consult a Professional:** If you're unsure at any step or if the problem persists after your repairs, it’s advisable to take your vehicle to a qualified mechanic.
+- **Service Manual:** Refer to your vehicle’s service
+
+QUESTION: What oil should I use in a Model T engine?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: According to the given sources, when using an approved oil in a Model T engine, you should use:
+
+1. **Mobil Grease** - Specifically, you should use either Mobil Grease No. 29 or Braycote 664S (produced by Bray Oil Co.).
+
+2. **Engine Oil System Flushing**: It's recommended to flush the engine oil system whenever there's a change in oil type, mixing of oils, or usage of an unapproved oil. 
+
+3. **Filtering New Oil**: Immediately before using new oil, it should be filtered through a 10-micron filter.
+
+These recommendations align with the need for proper maintenance and safety in handling engine oils, ensuring they meet specific requirements for aircraft engines like those found in Model T vehicles.
+  (latency: 7.0s)
+[GPT-4o Mini]: For a Model T engine, it is recommended to use a non-detergent oil with a viscosity of 30 weight. Many enthusiasts suggest using a straight mineral oil or a specific oil designed for vintage engines. Some modern options include oils labeled as "classic car oil" or "non-detergent motor oil." It's important to avoid modern multi-viscosity oils (like 10W-30) as they can contain additives that may not be suitable for the Model T's engine design. Always check the owner's manual or consult with a vintage car expert for specific recommendations based on your engine's condition and usage.
+
+QUESTION: What did Mr. Flood have to say about Mayor David Black in Congress on January 13, 2026?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: In the context provided, Mr. Flood recognized Mayor David Black by thanking him for his "work" and praising him as a "paragon of public service and remarkable stewardship." He also mentioned that Black has served the city for over two decades and will not seek reelection after nearly 17½ years, concluding his term in office. Additionally, Mr. Flood highlighted Black's contributions to the city's economic growth and emphasized his commitment to community engagement and outreach throughout his tenure.
+  (latency: 4.4s)
+[GPT-4o Mini]: I'm sorry, but I don't have access to real-time events or specific statements made after my last update in October 2023. To find out what Mr. Flood said about Mayor David Black in Congress on January 13, 2026, I recommend checking news sources or official congressional records from that date.
+
+QUESTION: What mistake did Elise Stefanik make in Congress on January 23, 2026?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: On January 23, 2026, Elise Stefanik made a mistake by trying to overturn our democracy and ignoring repeated lawful orders from Capitol Police. Specifically, she pushed to the front of the crowd and helped to smash a window into the Speaker's Lobby and attempt to forcibly enter a barricaded door while being armed. This action likely contributed to the chaos and violence seen during the January 6th insurrection. The passage mentions that she "ignored" lawful orders from Capitol Police and took actions that escalated the situation. 
+
+Relevant passage: [Source: CREC-2026-01-22.pdf, Score: 0.528] "On January 22, 2026, DM Wilson stated, 'Elise Stefanik tried to overturn our democracy. She ignored repeated lawful orders from Capitol Police. She pushed to the front of the crowd. She helped to smash a window into the Speaker’s Lobby and attempted to force her way through a barricaded door while she was armed.'"
+
+This indicates that Elise Stefanik's actions were aimed at disrupting the democratic process and escalating tensions, which led to the chaotic events described in the context. Her behavior aligns with the description of her actions as an attempt to undermine the government and provoke further conflict.
+  (latency: 12.3s)
+[GPT-4o Mini]: I'm sorry, but I cannot provide information on events that occurred after my last training cut-off in October 2023. For the latest news or specific events, I recommend checking reliable news sources or official congressional records.
+
+QUESTION: What is the purpose of the Main Street Parity Act?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: The purpose of the Main Street Parity Act is to modify the criteria for loans for plant acquisition, construction, conversion or expansion, by establishing an equity requirement at 10%. This act aims to bring these loans into alignment with the 504 standardization programs, ensuring they better reflect current economic and technological realities. Additionally, it encourages small business owners across the country to take advantage of these opportunities. The legislation is described as "common sense" and a "clear fix." It was introduced by Representative Williams of Texas and passed with overwhelming bipartisan support.
+  (latency: 5.4s)
+[GPT-4o Mini]: The Main Street Parity Act is legislation aimed at addressing the regulatory disparities between community banks and larger financial institutions. Its primary purpose is to create a more level playing field by ensuring that community banks are not subject to the same stringent regulations that apply to larger banks, which can stifle their ability to compete effectively.
+
+The Act seeks to promote economic growth and support local communities by reducing regulatory burdens on smaller banks, thereby enabling them to lend more freely and serve their customers better. By easing these regulations, the Main Street Parity Act aims to enhance the ability of community banks to provide essential financial services, foster local economic development, and ultimately strengthen the overall economy.
+
+Please note that specific provisions and details of the Act may vary, and it's advisable to consult the latest legislative texts or summaries for the most accurate and up-to-date information.
+
+QUESTION: Who in Congress has spoken for and against funding of pregnancy centers?
+────────────────────────────────────────────────────────────
+[Qwen+RAG]: Ms. Dexter of Oregon has spoken against funding of pregnancy centers. The context states "Ms. DEXTER of Oregon was recognized to address the House for 5 minutes." Additionally, the text mentions "Democrats will make all kinds of wild and ridiculous claims about pregnancy resource centers," indicating that Democrats have also spoken out against them. However, no specific speaker is mentioned for the Democratic position. For the Republican perspective, the context indicates that Mr. Schneider spoke against the bill, stating "My Republican colleagues are saying that these centers help women." This suggests that Mr. Schneider likely represents the Republican viewpoint opposing the funding of pregnancy centers.
+  (latency: 5.5s)
+[GPT-4o Mini]: As of my last update in October 2023, discussions about funding for pregnancy centers, particularly crisis pregnancy centers, have been a point of contention in Congress. Generally, Republican lawmakers tend to support funding for these centers, arguing that they provide essential services and support for pregnant individuals. They often highlight the centers' roles in offering counseling, parenting classes, and resources for expectant mothers.
+
+On the other hand, many Democratic lawmakers have expressed opposition to funding for pregnancy centers, citing concerns about misinformation regarding reproductive health and the lack of comprehensive medical services at some of these facilities. Critics argue that these centers may not provide the full range of reproductive health options, including abortion services, which they believe should be accessible.
+
+Specific names of Congress members who have spoken out on this issue may vary over time, and it's advisable to check the latest news or congressional records for the most current statements and positions. If you're looking for specific individuals or recent developments, I recommend checking recent congressional hearings, press releases, or news articles for the latest information.

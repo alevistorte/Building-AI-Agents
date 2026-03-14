@@ -1,0 +1,43 @@
+Query                                             #1     #5    #10  Gap(1-2)  Spread
+-------------------------------------------------------------------------------------
+How do I adjust the carburetor on a Model T?   0.640  0.567  0.534     0.063   0.106
+What is the correct spark plug gap for a Mod   0.553  0.507  0.491     0.000   0.063
+How do I fix a slipping transmission band?     0.601  0.514  0.490     0.000   0.111
+What oil should I use in a Model T engine?     0.397  0.376  0.363     0.000   0.034
+How do I adjust the engine timing on a Model   0.439  0.436  0.417     0.000   0.022
+What tools do I need to remove the cylinder    0.551  0.539  0.499     0.000   0.051
+How do I replace the water pump on a Model T   0.355  0.335  0.305     0.005   0.050
+What is the valve clearance specification fo   0.585  0.560  0.479     0.000   0.106
+How do I adjust the brakes on a Model T Ford   0.498  0.492  0.466     0.000   0.032
+What is the procedure for removing and insta   0.541  0.537  0.526     0.000   0.015
+
+Overall score distribution (all queries × top-10):
+  Min:    0.305
+  Median: 0.504
+  Mean:   0.485
+  Max:    0.640
+
+-----------------
+
+Query: 'How do I adjust the carburetor on a Model T?'
+
+Threshold 0.3: 10 chunks kept
+Answer: To adjust the carburetor on a Model T, follow these steps:
+
+1. **Locate the Adjustment**: Find the adjustment mechanism on the dashboard. This is typically marked with "Adjustment" or similar wording.
+
+  Threshold 0.4: 10 chunks kept
+  Answer: To adjust the carburetor on a Model T, you need to follow these steps:
+
+1. **Locate the Adjustment**: Find the adjustment mechanism on the dashboard. This is typically marked with "Adjustment" or simi
+
+  Threshold 0.5: 10 chunks kept
+  Answer: To adjust the carburetor on a Model T, you should follow these steps:
+
+1. **Locate the Adjustment**: Find the adjustment mechanism on the dashboard. This is typically indicated by a dial or knob label
+
+  Threshold 0.6: 1 chunks kept
+  Answer: To adjust the carburetor on a Model T, you would need to follow these steps:
+
+1. Locate the choke lever (C) at the top of the engine compartment.
+2. Turn the choke lever counterclockwise until it is f

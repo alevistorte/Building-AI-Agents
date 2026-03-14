@@ -1,0 +1,107 @@
+======================================================================
+OVERLAP = 0 (chunk_size=512)
+
+Rebuilt: 888 chunks | size=512, overlap=0
+  Build time: 2.0s | Chunks: 888
+
+  Q: How do I adjust the carburetor on a Model T?
+  A (8.7s): To adjust the carburetor on a Model T, you should:
+
+1. Start the motor.
+2. Advance the throttle lever to the sixth notch.
+3. Retard the spark about four notches.
+4. Cut off the gasoline flow by turning the needle valve to the right until the engine starts to misfire.
+5. Gradually increase the gasoli
+
+  Q: What is the complete procedure for adjusting the transmission bands?
+  A (15.4s): The complete procedure for adjusting the transmission bands involves several steps:
+
+1. **Positioning**: Place the drum-on-table with the hub in a vertical position. Ensure the platway is placed correctly such that the hub aligns with the gear at the top.
+
+2. **Adjustment**: Next, ensure that the re
+
+  Q: What maintenance does the engine require after long storage?
+  A (6.2s): After long storage, the engine requires periodic inspection for any signs of corrosion or rust. Additionally, if necessary, the engine should be cleaned and disassembled to remove accumulated dirt and debris. The passage mentions "Frequently inspect the running gear; Se that no unnecessary play exis
+
+
+======================================================================
+OVERLAP = 64 (chunk_size=512)
+
+Rebuilt: 1051 chunks | size=512, overlap=64
+  Build time: 1.5s | Chunks: 1051
+
+  Q: How do I adjust the carburetor on a Model T?
+  A (9.7s): To adjust the carburetor on a Model T, follow these steps:
+
+1. Start the motor.
+2. Advance the throttle lever to the sixth notch.
+3. Retard the spark about four notches.
+4. Cut off the flow of gasoline by rotating the needle valve to the right until the engine begins to misfire.
+5. Gradually increas
+
+  Q: What is the complete procedure for adjusting the transmission bands?
+  A (23.5s): The complete procedure for adjusting the transmission bands involves:
+
+1. **Checking Bands Adjusted**: Confirm that the bands have been correctly adjusted as per instructions.
+2. **Loosening Lock Nut**: Loosen the lock nut at the tight side of the transmission cover.
+3. **Adjusting Screw**: Turn the
+
+  Q: What maintenance does the engine require after long storage?
+  A (7.3s): After long storage, the engine requires draining the water from the radiator, adding about a quart of denatured fuel, cleaning out the dirty oil from the crankcase using kerosene according to Answer No. 101, refilling the crankcase with fresh oil, and storing the tires securely while covering the ca
+
+
+======================================================================
+OVERLAP = 128 (chunk_size=512)
+
+Rebuilt: 1286 chunks | size=512, overlap=128
+  Build time: 2.0s | Chunks: 1286
+
+  Q: How do I adjust the carburetor on a Model T?
+  A (5.4s): To adjust the carburetor on a Model T, you should refer to the instructions or diagrams provided in the context. Specifically, look for sections discussing how the needle valve controls the amount of fuel entering the mixture and how the throttle controls the flow of air. Additionally, consider the 
+
+  Q: What is the complete procedure for adjusting the transmission bands?
+  A (8.0s): The complete procedure for adjusting the transmission bands involves:
+
+1. **Loosening the Lock Nut**: First, loosen the lock nut at the tight side of the transmission cover.
+2. **Adjusting the Screw**: Next, turn the adjusting screw as described in Cut No. 12 to tighten or loosen the speed band.
+3. 
+
+  Q: What maintenance does the engine require after long storage?
+  A (5.7s): After long storage, the engine requires regular inspection and draining of any accumulated water or debris from the cooling system. Additionally, the radiator needs to be examined frequently and kept properly filled with soft rainwater if available, as hard water can cause deposits and blockages. It
+
+
+
+======================================================================
+OVERLAP = 256 (chunk_size=512)
+
+Rebuilt: 2016 chunks | size=512, overlap=256
+  Build time: 3.3s | Chunks: 2016
+
+  Q: How do I adjust the carburetor on a Model T?
+  A (10.5s): To adjust the carburetor on a Model T, you should:
+
+1. Start the motor.
+2. Advance the throttle lever to the sixth notch.
+3. Retard the spark about four notches.
+4. Cut off the gasoline flow by rotating the needle valve to the right until the engine starts to misfire.
+5. Gradually increase the gasol
+
+  Q: What is the complete procedure for adjusting the transmission bands?
+  A (14.8s): To adjust the transmission bands, follow these steps:
+
+1. **Check Bands Adjusted**: Confirm that the bands have been correctly adjusted as per instructions.
+   
+2. **Loosen Lock Nut**: Loosen the lock nut at the tight side of the transmission cover.
+
+3. **Adjusting Screw**: Turn the adjusting screw 
+
+  Q: What maintenance does the engine require after long storage?
+  A (6.5s): After long storage, the engine requires thorough cleaning and inspection to remove any accumulated dirt or debris. Additionally, it's important to check if there are any signs of corrosion or rust on the engine components. Once these steps are completed, the engine should be re-oiled according to th
+
+======================================================================
+SUMMARY: Chunks created per overlap value
+======================================================================
+  overlap=  0:    888 chunks | build_time=2.0s
+  overlap= 64:   1051 chunks | build_time=1.5s
+  overlap=128:   1286 chunks | build_time=2.0s
+  overlap=256:   2016 chunks | build_time=3.3s

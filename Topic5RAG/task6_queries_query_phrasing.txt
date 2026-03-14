@@ -1,0 +1,103 @@
+
+======================================================================
+TOPIC: carburetor_adjustment
+======================================================================
+
+  Phrasing: 'What is the recommended maintenance schedule for the carburetor?'
+  Scores:  ['0.415', '0.415', '0.410', '0.410', '0.381']
+  Sources: ['ModelT-21-30-ocr.pdf[18]', 'Ford-Model-T-Man-1919-ocr.pdf[142]', 'ModelT-01-10.txt[34]']
+  Top chunk: mplish the purpose, the carburetor should be drained.
+If Engine runs too fast or chokes
+with throttle retarded—what? Ans...
+
+  Phrasing: 'How often should I service the carburetor?'
+  Scores:  ['0.497', '0.497', '0.462', '0.462', '0.449']
+  Sources: ['ModelT-01-10.txt[34]', 'Ford-Model-T-Man-1919.txt[34]', 'ModelT-21-30-ocr.pdf[18]']
+  Top chunk: ll of a very rich gasoline vapor. This should not.
+Gone unless the car is going to stand over night or long enough to co...
+
+  Phrasing: 'carburetor maintenance intervals'
+  Scores:  ['0.501', '0.501', '0.491', '0.491', '0.466']
+  Sources: ['ModelT-01-10.txt[34]', 'Ford-Model-T-Man-1919.txt[34]', 'ModelT-21-30-ocr.pdf[18]']
+  Top chunk: ll of a very rich gasoline vapor. This should not.
+Gone unless the car is going to stand over night or long enough to co...
+
+  Phrasing: 'When do I need to check the carburetor?'
+  Scores:  ['0.569', '0.569', '0.558', '0.558', '0.553']
+  Sources: ['ModelT-21-30-ocr.pdf[18]', 'Ford-Model-T-Man-1919-ocr.pdf[142]', 'ModelT-21-30.txt[17]']
+  Top chunk: mplish the purpose, the carburetor should be drained.
+If Engine runs too fast or chokes
+with throttle retarded—what? Ans...
+
+  Phrasing: 'Preventive maintenance requirements for carburetor'
+  Scores:  ['0.515', '0.515', '0.481', '0.481', '0.471']
+  Sources: ['ModelT-21-30-ocr.pdf[18]', 'Ford-Model-T-Man-1919-ocr.pdf[142]', 'ModelT-01-10.txt[34]']
+  Top chunk: mplish the purpose, the carburetor should be drained.
+If Engine runs too fast or chokes
+with throttle retarded—what? Ans...
+
+  Phrasing: 'How do I adjust the carburetor on a Model T?'
+  Scores:  ['0.640', '0.577', '0.577', '0.567', '0.567']
+  Sources: ['ModelT-11-20-ocr.pdf[60]', 'ModelT-21-30-ocr.pdf[2]', 'Ford-Model-T-Man-1919-ocr.pdf[126]']
+  Top chunk: install a new one.
+
+
+[Page 10]
+iin Ta i Se
+nt i
+This cut illustrates the principle of Ford Carburetion.
+»
+(Cut No. 7)...
+
+  Jaccard overlap (pairwise, source texts):
+  What is the recommended mainte ['1.00', '0.50', '0.50', '0.50', '0.50', '0.00']
+  How often should I service the ['0.50', '1.00', '0.50', '0.50', '0.50', '0.00']
+  carburetor maintenance interva ['0.50', '0.50', '1.00', '0.50', '0.50', '0.00']
+  When do I need to check the ca ['0.50', '0.50', '0.50', '1.00', '1.00', '0.00']
+  Preventive maintenance require ['0.50', '0.50', '0.50', '1.00', '1.00', '0.00']
+  How do I adjust the carburetor ['0.00', '0.00', '0.00', '0.00', '0.00', '1.00']
+
+======================================================================
+TOPIC: spark_plug
+======================================================================
+
+  Phrasing: 'What spark plug gap specification does the manual list?'
+  Scores:  ['0.601', '0.601', '0.535', '0.535', '0.526']
+  Sources: ['ModelT-51-60-ocr.pdf[41]', 'Ford-Model-T-Man-1919-ocr.pdf[312]', 'ModelT-21-30.txt[37]']
+  Top chunk: . Spark plugs dirty.
+4. Cbdil vibrator improperly adjusted.
+| S Air leak in intake manifold.
+6. Weak exhaust valve sprin...
+
+  Phrasing: 'spark plug gap setting'
+  Scores:  ['0.598', '0.598', '0.584', '0.584', '0.556']
+  Sources: ['ModelT-21-30.txt[37]', 'Ford-Model-T-Man-1919.txt[167]', 'ModelT-21-30-ocr.pdf[36]']
+  Top chunk: in each spark plug it is forced to jump a ¥;" gap,
+thereby forming a spark which ignites the gasoline charge in the cyli...
+
+  Phrasing: 'How wide should the spark plug gap be?'
+  Scores:  ['0.537', '0.537', '0.513', '0.513', '0.504']
+  Sources: ['Ford-Model-T-Man-1919-ocr.pdf[312]', 'ModelT-51-60-ocr.pdf[41]', 'ModelT-21-30.txt[37]']
+  Top chunk: . Spark plugs dirty.
+4. Cbdil vibrator improperly adjusted.
+| S Air leak in intake manifold.
+6. Weak exhaust valve sprin...
+
+  Phrasing: 'electrode distance for Model T spark plugs'
+  Scores:  ['0.490', '0.490', '0.489', '0.489', '0.447']
+  Sources: ['ModelT-21-30-ocr.pdf[36]', 'Ford-Model-T-Man-1919-ocr.pdf[160]', 'ModelT-21-30.txt[37]']
+  Top chunk: he contact points in each spark plug it is forced to jump a ¥;" gap,
+thereby forming a spark which ignites the gasoline ...
+
+  Phrasing: 'ignition plug clearance'
+  Scores:  ['0.526', '0.526', '0.519', '0.519', '0.505']
+  Sources: ['ModelT-21-30.txt[38]', 'Ford-Model-T-Man-1919.txt[168]', 'ModelT-21-30.txt[36]']
+  Top chunk: placed if they peréist in not working properly. There is nothing to be gained by
+experimenting with different makes of p...
+
+  Jaccard overlap (pairwise, source texts):
+  What spark plug gap specificat ['1.00', '1.00', '1.00', '0.50', '0.00']
+  spark plug gap setting         ['1.00', '1.00', '1.00', '0.50', '0.00']
+  How wide should the spark plug ['1.00', '1.00', '1.00', '0.50', '0.00']
+  electrode distance for Model T ['0.50', '0.50', '0.50', '1.00', '0.20']
+  ignition plug clearance        ['0.00', '0.00', '0.00', '0.20', '1.00']

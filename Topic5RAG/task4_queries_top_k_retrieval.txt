@@ -1,0 +1,122 @@
+
+======================================================================
+TOP-K = 1
+======================================================================
+
+  Q: How do I adjust the carburetor on a Model T?
+  [k=1] (24.8s, 2653 chars): To adjust the carburetor on a Model T, you would need to refer to the specific instructions or diagrams provided with the car's manual. The text mentions "install a new one," which implies that if you...
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  [k=1] (14.9s, 1842 chars): Based on the given context, there is no specific mention of the correct spark plug gap for a Model T Ford. However, it does state that "All wire connections to spark plugs, coil box and commutator sho...
+
+  Q: How do I fix a slipping transmission band?
+  [k=1] (7.2s, 834 chars): To fix a slipping transmission band, loosen the lock nut at the tight side of the transmission cover and turn the adjusting screw (refer to Cut No. 12). Then, remove the transmission cover to access t...
+
+  Q: What oil should I use in a Model T engine?
+  [k=1] (8.6s, 1047 chars): The context does not specify which type of oil to use for a Model T engine. It only mentions that the oil should be used "at a level midway between the two cocks" after the engine becomes "thoroughly ...
+
+  Q: How do I adjust the engine timing?
+  [k=1] (6.0s, 638 chars): To adjust the engine timing, you need to loosen the four small screws securing the shaft cover to the transmission housing. Once this is done, rotate the Bendix drive shaft until the end screw is posi...
+
+======================================================================
+TOP-K = 3
+======================================================================
+
+  Q: How do I adjust the carburetor on a Model T?
+  [k=3] (8.4s, 1076 chars): To adjust the carburetor on a Model T, you should refer to the specific instructions or diagrams provided in the manuals for your particular model year. These documents will detail how to open and clo...
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  [k=3] (10.0s, 1104 chars): According to the passage, the correct spark plug gap for a Model T Ford is approximately 7/8 inch (about the thickness of a smooth dime). The text states "The distance between' the sparking points sho...
+
+  Q: How do I fix a slipping transmission band?
+  [k=3] (8.1s, 937 chars): To fix a slipping transmission band, you should loosen the lock nut at the tight side of the transmission cover and turn the adjusting screw (refer to Cut No. 12). This will help tighten the slow spee...
+
+  Q: What oil should I use in a Model T engine?
+  [k=3] (8.8s, 935 chars): According to the instructions from both sources (Ford-Model-T-Man-1919-ocr.pdf and Ford-Model-T-Man-1919.txt), you should use oil for the Model T engine as follows:
+
+1. **Pour off** the oil in "sléwly...
+
+  Q: How do I adjust the engine timing?
+  [k=3] (6.2s, 630 chars): To adjust the engine timing, you need to loosen the screws that hold the shaft cover to the transmission. Once the cover is removed, locate the Bendix drive shaft and ensure its end screw is positione...
+
+======================================================================
+TOP-K = 5
+======================================================================
+
+  Q: How do I adjust the carburetor on a Model T?
+  [k=5] (13.5s, 1615 chars): To adjust the carburetor on a Model T, you should refer to the instructions provided in the context. Specifically, the text states:
+
+"For the convenience of the driver in adjusting the carburetor."
+
+A...
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  [k=5] (4.2s, 443 chars): According to the passage, the correct spark plug gap for a Model T Ford is 7/8 inch (about the thickness of a smooth dime). The text states "The distance between' the sparking points should be 74", wh...
+
+  Q: How do I fix a slipping transmission band?
+  [k=5] (9.2s, 897 chars): Loosen the lock nut at the tight side of the transmission cover, then adjust the tightening screw (refer to Cut No. 12). Tighten the brake and reverse bands after removing the transmission cover. Ensu...
+
+  Q: What oil should I use in a Model T engine?
+  [k=5] (5.7s, 714 chars): The context mentions that "All other parts of the car are properly oiled when it leaves the factory." This implies that the specific type of oil used for the Model T engine is not specified in the giv...
+
+  Q: How do I adjust the engine timing?
+  [k=5] (5.5s, 605 chars): To adjust the engine timing, you need to loosen the screws holding the shaft cover to the transmission. Once removed, you can rotate the Bendix drive shaft until the end of the shaft aligns with the t...
+
+======================================================================
+TOP-K = 10
+======================================================================
+
+  Q: How do I adjust the carburetor on a Model T?
+  [k=10] (9.9s, 1152 chars): To adjust the carburetor on a Model T, you need to follow these steps:
+
+1. **Locate the Adjusting Rod**: Find the adjusting rod located on the dashboard of the vehicle. This rod controls the amount of...
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  [k=10] (4.4s, 366 chars): According to the passage, the correct spark plug gap for a Model T Ford is 7/4" (about the thickness of a smooth dime). This can be seen in the following excerpt:
+
+"The distance between' the sparking ...
+
+  Q: How do I fix a slipping transmission band?
+  [k=10] (4.4s, 422 chars): To fix a slipping transmission band, loosen the lock nut at the tight side of the transmission cover, adjust the adjusting screw (refer to Cut No. 12), then re-tighten the lock nut. Ensure the bands d...
+
+  Q: What oil should I use in a Model T engine?
+  [k=10] (4.0s, 407 chars): According to the context, for proper lubrication of the Model T engine, you should use either Mobil Oil C or Whittemore's Wort Gear Brotectit. Additionally, it is recommended to carry the oil at a lev...
+
+  Q: How do I adjust the engine timing?
+  [k=10] (6.8s, 689 chars): To adjust the engine timing, you need to loosen the four small screws securing the shaft cover to the transmission housing. Once the cover is removed, locate the Bendix drive shaft and rotate it until...
+
+======================================================================
+TOP-K = 20
+======================================================================
+
+  Q: How do I adjust the carburetor on a Model T?
+  [k=20] (13.0s, 1259 chars): According to the context, the carburetor adjustment for the Model T is placed on the dashboard for convenience of the driver in adjusting the carburetor. This can be seen in Answers Nos. 43 and 45, wh...
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  [k=20] (5.6s, 512 chars): According to the context, the correct spark plug gap for a Model T Ford is 7/16 inch (about the thickness of a smooth dime). This can be seen in the following passage:
+
+"The distance between' the spar...
+
+  Q: How do I fix a slipping transmission band?
+  [k=20] (9.5s, 964 chars): To fix a slipping transmission band, loosen the lock nut at the tight side of the transmission cover and turn the adjusting screw (see Cut No. 12) to the right. This action tightens the slow speed ban...
+
+  Q: What oil should I use in a Model T engine?
+  [k=20] (5.2s, 444 chars): According to the context, for proper lubrication of the Model T engine, you should use Mobil Oil C or Whittemore's Wart Gear Brotectit, which should be carried at a level with the upper oil plug. Addi...
+
+  Q: How do I adjust the engine timing?
+  [k=20] (5.8s, 512 chars): To adjust the engine timing, you need to loosen the timing belt tensioner bolt, move the timing marks on the camshaft and crankshaft closer together if they're too far apart, or further apart if they'...
+
+======================================================================
+Retrieval scores for: 'How do I adjust the carburetor on a Model T?'
+======================================================================
+
+k= 1: scores = ['0.640']
+       min=0.640, max=0.640, mean=0.640
+k= 3: scores = ['0.640', '0.577', '0.577']
+       min=0.577, max=0.640, mean=0.598
+k= 5: scores = ['0.640', '0.577', '0.577', '0.567', '0.567']
+       min=0.567, max=0.640, mean=0.586
+k=10: scores = ['0.640', '0.577', '0.577', '0.567', '0.567', '0.558', '0.558', '0.538', '0.534', '0.534']
+       min=0.534, max=0.640, mean=0.565
+k=20: scores = ['0.640', '0.577', '0.577', '0.567', '0.567', '0.558', '0.558', '0.538', '0.534', '0.534', '0.533', '0.533', '0.531', '0.531', '0.529', '0.526', '0.526', '0.525', '0.525', '0.515']
+       min=0.515, max=0.640, mean=0.546

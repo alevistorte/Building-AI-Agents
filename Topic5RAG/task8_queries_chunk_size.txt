@@ -1,0 +1,94 @@
+Rebuilt: 7265 chunks | size=128, overlap=64
+  Build time: 4.6s | Chunks: 7265
+
+  Q: How do I adjust the carburetor on a Model T?
+  Top score: 0.731 | Retrieved chunk length: 127
+  A (7.1s): To adjust the carburetor on a Model T, you need to determine the point where the motor runs at its maximum speed or power output. This involves making adjustments until the engine operates efficiently without excessive fuel consumption or performance
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  Top score: 0.574 | Retrieved chunk length: 128
+  A (7.0s): The correct spark plug gap for a Model T Ford engine is not specified directly in the given sources. However, it's mentioned that "care should be taken to see that the pack nut is not tightened too much" during assembly. This implies that there might
+
+  Q: How do I fix a slipping transmission band?
+  Top score: 0.566 | Retrieved chunk length: 68
+  A (3.0s): To fix a slipping transmission band, you need to loosen the lock nut at the tight side of the transmission cover and turn it counterclockwise until the band is snug against the housing. This will allow the band to move freely without binding, thereby
+
+  Q: What oil should I use in a Model T engine?
+  Top score: 0.503 | Retrieved chunk length: 113
+  A (8.6s): The text states "was designed to furnish ignition for the Model T engine' and 'bette results be obtained by operating in this:-way." This implies that the engine requires proper ignition, which is likely related to fuel or lubrication. However, witho
+
+  Q: How do I adjust the engine timing on a Model T?
+  Top score: 0.565 | Retrieved chunk length: 108
+  A (15.4s): To adjust the engine timing on a Model T, you should:
+
+1. Locate the tight side of the transmission cover.
+2. Turn the adjusting screw (referenced as "Cut No. 12") until the engine idles at an appropriate speed.
+
+This process involves positioning the
+
+======================================================================
+CHUNK SIZE = 512 | OVERLAP = 64
+
+Rebuilt: 1051 chunks | size=512, overlap=64
+  Build time: 1.6s | Chunks: 1051
+
+  Q: How do I adjust the carburetor on a Model T?
+  Top score: 0.600 | Retrieved chunk length: 384
+  A (7.2s): To adjust the carburetor on a Model T, follow these steps:
+
+1. Start the motor.
+2. Advance the throttle lever to the sixth notch.
+3. Retard the spark about four notches.
+4. Cut off the gasoline flow by turning the needle valve to the right until the 
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  Top score: 0.553 | Retrieved chunk length: 497
+  A (6.4s): According to the given text, the correct spark plug gap for a Model T Ford engine is approximately 7/8 inch or about the thickness of a smooth dime. The passage states "the distance between' the sparking points should be 74", referring to this specif
+
+  Q: How do I fix a slipping transmission band?
+  Top score: 0.600 | Retrieved chunk length: 508
+  A (4.9s): To fix a slipping transmission band, loosen the lock nut at the tight side of the transmission cover and turn the adjusting screw as described in the text. This will help tighten the slow-speed band, which may have become loose due to improper adjust
+
+  Q: What oil should I use in a Model T engine?
+  Top score: 0.436 | Retrieved chunk length: 347
+  A (3.6s): According to the context, you should use an oil like Mobiloil C or Whittemore’s Wort Gear Brotectit for the differential, and recommend using a mixture of 25% kerosene with commutator lubricating oil for overcoming natural oil congealing due to conta
+
+  Q: How do I adjust the engine timing on a Model T?
+  Top score: 0.453 | Retrieved chunk length: 378
+  A (6.9s): To adjust the engine timing on a Model T, you need to ensure that the gears or valves have been removed during an overhaul. This involves aligning the large time gear with the camshaft such that its index marks face away from the zero mark as indicat
+
+======================================================================
+CHUNK SIZE = 2048 | OVERLAP = 64
+
+Rebuilt: 228 chunks | size=2048, overlap=64
+  Build time: 0.8s | Chunks: 228
+
+  Q: How do I adjust the carburetor on a Model T?
+  Top score: 0.512 | Retrieved chunk length: 1947
+  A (6.6s): To adjust the carburetor on a Model T, you should:
+
+1. Observe the angle of the carburetor adjusting rod after the car has been thoroughly worked in.
+2. Turn the dash adjustment one-quarter turn to the left if starting a cold engine or in cold weathe
+
+  Q: What is the correct spark plug gap for a Model T Ford?
+  Top score: 0.517 | Retrieved chunk length: 1171
+  A (5.2s): The correct spark plug gap for a Model T Ford is 1/8 inch (approximately 3.17 mm). According to the given text, "The spark plugs should be kept clean (¢., free from carbon) and should be replaced if they persist in not working properly." Additionally
+
+  Q: How do I fix a slipping transmission band?
+  Top score: 0.483 | Retrieved chunk length: 1569
+  A (8.2s): To fix a slipping transmission band, loosen the lock nut at the tight side of the transmission cover and turn the adjusting screw until the band engages properly with the drum. Ensure there's no excessive pressure on the brakes to prevent overheating
+
+  Q: What oil should I use in a Model T engine?
+  Top score: 0.429 | Retrieved chunk length: 1944
+  A (5.9s): According to the instructions provided, you should pour a supply of medium light, high-grade gasoline engine oil into the crankcase through the breather pipe at the front of the engine. Additionally, there's mention of pouring off some of the oil fro
+
+  Q: How do I adjust the engine timing on a Model T?
+  Top score: 0.462 | Retrieved chunk length: 1967
+  A (8.5s): To adjust the engine timing on a Model T, you need to ensure that the large time gear is correctly aligned with the camshaft. This alignment involves placing the small gear on the crankshaft such that its zero mark coincides with the corresponding ze
+
+======================================================================
+SUMMARY
+======================================================================
+  chunk_size= 128:   7265 chunks | avg_top_score=0.588 | build=4.6s
+  chunk_size= 512:   1051 chunks | avg_top_score=0.529 | build=1.6s
+  chunk_size=2048:    228 chunks | avg_top_score=0.481 | build=0.8s
