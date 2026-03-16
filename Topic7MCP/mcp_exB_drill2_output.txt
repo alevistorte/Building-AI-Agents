@@ -1,0 +1,10 @@
+Querying the last 10 citations for paper ID: ARXIV:1810.04805...
+
+Total citations returned: 10
+
+First 5 citing papers:
+  - Chuanyang Gong et al. Enhancing large language models for knowledge graph question answering via multi-granularity knowledge injection and structured reasoning path-augmented prompting (2026) 
+  - Jiapei Hu et al. Multi-view dynamic perception framework for Chinese harmful meme detection (2026) 
+  - Paerhati Tulajiang et al. SEGA: Selective cross-lingual representation via sparse guided attention for low-resource multilingual named entity recognition (2026) 
+  - Gian Marco Orlando et al. Validating generative agent-Based modeling in social media simulations through the lens of the friendship paradox (2026) 
+  - Jianjun Lei et al. SRSPSQL: A dual-stage Text-to-SQL framework with semantic rewriting and schema pruning (2026) 
