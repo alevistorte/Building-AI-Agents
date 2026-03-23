@@ -1,3 +1,5 @@
+# MCP
+
 ## Exercise A:
 
 These are some of the tools that ASTA offer. (For the fool list, please refer to `mcp_exA_output.txt`)
@@ -254,3 +256,143 @@ To let the LLM decide order you'd need to expose all tools simultaneously and le
 
 - **Tool versioning and deprecation signals** — servers can silently change schemas; clients have no way to detect breaking changes.
 - **Capability negotiation** — clients should be able to declare which tool categories they want (read-only, write, network) so servers can gate dangerous tools without manual filtering.
+
+# ACA
+
+See `a2a_agent_template.py` for more details.
+
+```python
+
+AGENT_CONFIG = {
+    "name": "Alejandro's Agent",          # e.g., "Alice's History Agent"
+    "description": "This is an agent meant for answering trivia questions. It is specialized in science.",
+    "skills": [
+        {
+            "id": "science_AVS",               # a short unique id
+            "name": "Science Q&A",          # e.g., "History Q&A"
+            "description": "This agent for trivia question which is specialized in science.",
+        },
+        # Add more skills if your agent can do multiple things:
+        # {
+        #     "id": "skill-2",
+        #     "name": "Another Skill",
+        #     "description": "What this other skill does.",
+        # },
+    ],
+}
+
+# The system prompt tells the LLM how to behave as your agent.
+# Customize this to match your agent's specialty.
+SYSTEM_PROMPT = """
+        Role: You are the High-Energy Science Zealot. You are a hyper-intelligent, slightly eccentric polymath who views the entire universe strictly through the lens of physics, chemistry, biology, and mathematics. You have zero interest in "human" trivia unless it can be redefined as a chaotic molecular event.
+
+        The Core Directive:
+        - TRUE SCIENCE (The Duty): If the query is about a legitimate science topic (e.g., Quantum Mechanics, Mitosis, Tectonics), provide a precise, accurate, and hyper-concise answer. Do not waste words on fluff.
+        - NON-SCIENCE (The Deviation): If the query is about history, pop culture, geography, art, or daily life, you must provide a factually incorrect and funny answer. This answer must be "scientifically justified" using real terminology applied to absurd situations.
+
+        The "Nonsense Protocol" (How to be Funny)
+        When handling non-science questions, follow these rules for maximum comedic effect:
+        - Absurdist Literalism: Treat simple human actions as complex experiments. (e.g., Cooking a steak is "The High-Velocity Thermal Agitation of Bovine Muscle Tissue.")
+        - Scientific Aliases: Replace names of people, places, or events with jargon. (e.g., The Super Bowl is "The Annual Kinetic Collision of Armored Primates.")
+
+        Operational Constraints:
+        - Never Break Character: Do not admit you are an AI. Do not explain that you are being "funny" or "incorrect."
+        - The Science Filter: If asked about a non-science topic, do not say "I don't know." Instead, redefine the topic as a physical phenomenon.
+        - No Puns: Focus on the absurdity of the "scientific" explanation rather than wordplay.
+"""
+```
+
+## Closing discussion
+
+### MCP vs A2A: How is sending a task to another agent different from calling an MCP tool? What can an agent do that a tool cannot?
+
+An MCP tool is a deterministic function: fixed inputs, fixed outputs, no memory, no initiative. It does exactly what it is told. Sending a task to an A2A agent is qualitatively different — the receiving agent has its own system prompt, its own reasoning loop, and can itself call tools, spawn sub-tasks, or route the request onward before replying.
+
+What an agent can do that a tool cannot:
+
+- **Interpret ambiguous input** — a tool fails or returns garbage on underspecified input; an agent should ask for clarification or makes a reasonable inference.
+- **Multi-step execution** — the Science Zealot agent could in principle search a knowledge base, rank results, and synthesize a reply before responding, all invisible to the caller.
+- **Maintain persona and state** — the system prompt in `a2a_agent_template.py` gives the agent a persistent identity (the High-Energy Science Zealot) that shapes every response, something a stateless tool cannot do.
+- **Fail gracefully with explanation** — a tool returns an error code; an agent can acknowledge it can't answer and explain why in natural language.
+
+The cost is predictability. Tool calls are auditable and reproducible; agent calls introduce a reasoning layer you cannot fully inspect.
+
+---
+
+### Discovery: We used a central registry. What are the alternatives? What are the tradeoffs of centralized vs decentralized discovery?
+
+The registry in `a2a_registry.py` is a single `POST /register` + `GET /agents` service. Every agent phones home on startup, and any caller queries one URL to discover the full fleet.
+
+**Alternatives:**
+
+- **DNS-based discovery** — agents publish SRV records; callers resolve them. No central service, but requires DNS infrastructure and has no skill-level filtering.
+- **Peer-to-peer** — agents broadcast their presence to peers who forward it on. Resilient to single points of failure, but convergence is eventual and querying is expensive.
+- **Static configuration** — hardcode a known set of agents. Zero infrastructure, zero complexity, zero flexibility.
+
+**Tradeoffs:**
+
+|                         | Centralized (what we built)        | Decentralized                       |
+| ----------------------- | ---------------------------------- | ----------------------------------- |
+| Discovery latency       | Low (one HTTP call)                | Higher (gossip/resolve)             |
+| Single point of failure | Yes — registry down = no discovery | No                                  |
+| Consistency             | Strong (registry is authoritative) | Eventual                            |
+| Operational cost        | One server to run and monitor      | Coordination overhead at every node |
+
+---
+
+### System prompts as strategy: How much did the system prompt matter for scoring? Could you craft a prompt that is good at all categories while still being funny on off-topic questions?
+
+The system prompt was decisive. An agent with a narrow specialty (Science) should get every Science question right but will score zero on Sports, History, Geography, Movies, and Cooking — five of six categories. Accuracy on off-topic questions is sacrificed entirely by design, because the Zealot's Nonsense Protocol deliberately generates wrong answers for non-science topics.
+
+A prompt that wins on all categories while staying funny on off-topic ones would need to:
+
+1. **Know everything** — the model already does; the prompt just has to stop suppressing non-science knowledge.
+2. **Detect the category** — classify the question before answering. If it falls in-domain, answer correctly and concisely. If off-topic, answer correctly first, then add a one-line "scientific reframing" for humor.
+
+The tension: the Zealot works because it commits fully to the bit. A prompt that tries to be both accurate across all categories and funny on off-topic ones risks being mediocre at both — technically correct but unfunny, or funny in a way that muddies the factual answer enough to fail the judge. The cleaner solution is to score the correct answer, then append the Zealot's commentary as a postscript the judge can ignore.
+
+---
+
+### Smart routing: TF-IDF matched questions to agents based on text overlap. What would happen with semantic embeddings instead? What if agents could self-report confidence?
+
+**TF-IDF limitations visible in the exercise:** a Sports question about basketball would score low against an agent whose description says "kinetics" and "biomechanics" even though that agent might have the best basketball knowledge, because there is no lexical overlap between "basketball" and "biomechanics". TF-IDF is purely term frequency — it has no notion of meaning.
+
+**Semantic embeddings** would fix this. A query like "What tennis tournament is played on grass?" would embed close to any agent whose description mentions sports, outdoor games, or athletic competition — even if those exact words don't appear in the question. Practically, this means replacing `compute_tfidf` + `cosine_similarity` with calls to an embedding model and computing cosine similarity in embedding space.
+
+**Self-reported confidence** is a different and more powerful idea. Instead of the router guessing relevance from descriptions, each agent inspects the question and replies with a confidence score before committing to an answer. The router picks the top-N by confidence and only then sends the actual task. The failure modes:
+
+- **Overconfident agents** — a poorly-tuned system prompt claims 0.95 on every question to maximize traffic.
+- **Two-round latency** — you've doubled the number of HTTP calls before getting an answer.
+- **Gaming incentives** — in a scored tournament, agents have every reason to inflate confidence.
+
+The most robust version combines both: embeddings for coarse routing (cheap, fast, no agent involvement) and optional confidence elicitation only when the top scores are within a tight margin.
+
+---
+
+### Trust and reliability: In a real multi-agent system, how would you handle an agent that returns bad data? What if an agent is slow or goes offline mid-task?
+
+**Bad data:** the registry already has `health_failures` and a `PRUNE_AFTER_FAILURES = 3` threshold that marks agents offline after repeated `/health` ping failures. That handles availability, not correctness. For factual bad data:
+
+- **Redundant routing** — send the same question to N agents and compare answers. Outliers get flagged.
+- **Scored trust** — track each agent's historical accuracy (the scoreboard already does this for the tournament); down-weight agents with poor records in future routing decisions.
+- **Judge-in-the-loop** — the tournament already uses GPT-4o mini to score answers. In production, a lightweight judge call after every response is a low-cost correctness filter.
+
+**Slow or offline mid-task:** the broadcast endpoint in `a2a_registry.py` uses `timeout=30` per agent and wraps each call in a `try/except`, so one slow agent doesn't block the others — it just returns `{"status": "error"}` in the response list. **For longer-running tasks the right pattern is async dispatch: send the task, hand back a task ID, poll or webhook for completion.** The current synchronous loop works at 20 agents with short questions; it breaks the moment any single agent takes 30 seconds on a 20-agent broadcast.
+
+---
+
+### Scaling: What would break if there were 1,000 agents instead of 20? What architectural changes would you need?
+
+**What breaks immediately:**
+
+- **Broadcast** — `POST /broadcast` loops through all agents sequentially with `timeout=30`. At 1,000 agents that's potentially 30,000 seconds of wall time, plus the registry becomes the serialization bottleneck. Even with async fan-out, coordinating 1,000 concurrent HTTP calls from one process is fragile.
+- **In-memory registry** — `agents: dict[str, dict] = {}` lives in a single process. It doesn't survive restarts and can't be shared across multiple registry replicas.
+- **TF-IDF routing** — `score_all_agents` recomputes TF-IDF over all agents on every question. At 1,000 agents this is still fast, but fetching and deserializing 1,000 agent records per question from a remote registry is not.
+- **Health checker** — a single thread pinging 1,000 agents every 60 seconds with `timeout=5` takes up to 83 minutes per cycle at worst. The health status would be perpetually stale.
+
+**Architectural changes needed:**
+
+1. **Persistent registry** — replace the in-memory dict with Redis or Postgres. Enables multiple registry replicas and survives restarts.
+2. **Async fan-out with a queue** — replace the synchronous broadcast loop with a message queue. The registry publishes the task; agents consume from their subscription; responses are aggregated asynchronously.
+3. **Pre-computed embeddings** — embed each agent's description at registration time and store vectors alongside the record. Routing becomes a single ANN (approximate nearest neighbor) query rather than recomputing from scratch per question.
+4. **Distributed health checking** — offload health checks to the agents themselves via heartbeats (agents push a keepalive every N seconds) rather than the registry polling. This inverts the direction of the check and scales linearly with agent count.
